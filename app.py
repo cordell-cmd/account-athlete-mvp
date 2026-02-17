@@ -637,7 +637,9 @@ else:
 		f"Largest product concentration: {top_prod_txt}."
 	)
 	st.markdown("**CNB Times (Auto-Summary)**")
-	st.write(narrative)
+	# Streamlit renders strings as Markdown; '$' triggers LaTeX math mode.
+	# Escape currency symbols to avoid italic/mushed output.
+	st.write(narrative.replace("$", "\\$"))
 
 	# Rank: highest days past due first, then highest risk, then largest loan exposure
 	sort_cols = [c for c in ["days_past_due", "risk_rating", "loan_balance"] if c in hot.columns]
