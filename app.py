@@ -31,6 +31,15 @@ st.markdown(
 		margin: 0.25rem 0 0.75rem 0;
 	}
 
+	.cnb-kicker {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 12px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: rgba(0,0,0,0.65);
+		margin: 0 0 6px 0;
+	}
+
 	.cnb-title {
 		font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
 		font-size: 56px;
@@ -95,6 +104,7 @@ st.markdown(
 	</style>
 
 	<div class="cnb-masthead">
+		<div class="cnb-kicker">Demo</div>
 		<div class="cnb-title">The CNB Times</div>
 	</div>
 	<div class="cnb-nav">
