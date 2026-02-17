@@ -686,6 +686,10 @@ if portfolio.empty:
 
 acc_ids_all = portfolio["account_id"].astype(str).tolist()
 
+# Streamlit selectboxes can get sluggish with extremely large option lists.
+# For demo-sized portfolios, show all accounts by default.
+MAX_SELECTBOX_OPTIONS = 2000
+
 query = st.text_input("Search account_id", value="", placeholder="Type e.g., A-1001 or B-30…")
 
 if query.strip():
@@ -695,13 +699,18 @@ if query.strip():
 		st.warning("No account_ids match your search in the current filtered set.")
 		acc_ids = acc_ids_all
 	else:
-		if len(acc_ids) > 200:
-			st.caption(f"Showing first 200 of {len(acc_ids):,} matches. Refine your search to narrow further.")
-			acc_ids = acc_ids[:200]
+		if len(acc_ids) > MAX_SELECTBOX_OPTIONS:
+			st.caption(
+				f"Showing first {MAX_SELECTBOX_OPTIONS:,} of {len(acc_ids):,} matches. Refine your search to narrow further."
+			)
+			acc_ids = acc_ids[:MAX_SELECTBOX_OPTIONS]
 else:
-	acc_ids = acc_ids_all[:200]
-	if len(acc_ids_all) > 200:
-		st.caption(f"Showing first 200 of {len(acc_ids_all):,} accounts. Type to search.")
+	if len(acc_ids_all) <= MAX_SELECTBOX_OPTIONS:
+		acc_ids = acc_ids_all
+		st.caption(f"Showing all {len(acc_ids_all):,} accounts in the current filtered set.")
+	else:
+		acc_ids = acc_ids_all[:MAX_SELECTBOX_OPTIONS]
+		st.caption(f"Showing first {MAX_SELECTBOX_OPTIONS:,} of {len(acc_ids_all):,} accounts. Type to search.")
 
 selected = st.selectbox("Select account", acc_ids)
 
