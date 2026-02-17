@@ -1,0 +1,1001 @@
+account_id,customer_type,open_date,has_loan,product,interest_rate,loan_balance,days_past_due,risk_rating
+A-1001,consumer,2022-04-15,True,Commercial CI,8.9,212483.16,48,5.0
+A-1002,consumer,2023-01-10,True,Commercial CRE,5.5,1191757.35,1,5.0
+B-2001,business,2020-08-01,True,Consumer Auto,8.7,38545.27,0,2.0
+B-2002,business,2021-06-20,True,Commercial CI,8.6,432523.55,7,8.0
+B-2003,business,2024-03-05,True,Commercial CI,7.8,328554.09,3,3.0
+A-3000,consumer,2026-01-17,False,,,,0,
+B-3000,business,2021-01-06,False,,,,0,
+A-3001,consumer,2025-01-31,True,Commercial CI,9.8,64762.86,47,3.0
+B-3001,business,2024-09-08,False,,,,0,
+B-3002,business,2023-05-31,False,,,,0,
+A-3002,consumer,2022-07-29,True,Commercial CI,8.9,396186.29,10,5.0
+A-3003,consumer,2021-02-21,False,,,,0,
+A-3004,consumer,2022-09-05,False,,,,0,
+A-3005,consumer,2022-06-24,True,Consumer Auto,9.3,37143.36,9,4.0
+A-3006,consumer,2022-11-25,False,,,,0,
+A-3007,consumer,2021-04-03,True,Consumer Auto,5.5,16255.28,27,3.0
+B-3003,business,2021-10-01,True,Consumer Auto,5.4,39789.55,19,3.0
+A-3008,consumer,2021-09-13,True,Commercial CI,9.4,364923.47,21,4.0
+A-3009,consumer,2025-03-01,False,,,,0,
+A-3010,consumer,2022-04-01,False,,,,0,
+B-3004,business,2025-04-24,True,Consumer Auto,7.5,24204.75,6,6.0
+A-3011,consumer,2021-01-20,False,,,,0,
+A-3012,consumer,2026-01-03,False,,,,0,
+B-3005,business,2019-10-19,False,,,,0,
+A-3013,consumer,2024-12-29,True,Commercial CRE,7.9,1251132.1,9,2.0
+A-3014,consumer,2021-04-04,False,,,,0,
+B-3006,business,2023-10-12,False,,,,0,
+A-3015,consumer,2022-08-30,False,,,,0,
+A-3016,consumer,2024-09-16,False,,,,0,
+B-3007,business,2025-06-04,False,,,,0,
+A-3017,consumer,2020-06-02,False,,,,0,
+A-3018,consumer,2020-03-10,False,,,,0,
+B-3008,business,2023-01-17,True,Commercial CRE,6.0,1641079.35,7,3.0
+A-3019,consumer,2019-06-30,True,Commercial CRE,4.8,1950166.41,7,5.0
+A-3020,consumer,2024-03-06,True,Commercial CI,9.2,187260.22,8,4.0
+A-3021,consumer,2021-01-05,True,Commercial CI,8.6,59982.53,4,9.0
+A-3022,consumer,2025-12-26,True,Commercial CRE,5.6,350868.85,8,5.0
+A-3023,consumer,2020-08-22,False,,,,0,
+A-3024,consumer,2025-05-25,False,,,,0,
+A-3025,consumer,2022-03-20,False,,,,0,
+B-3009,business,2025-11-20,True,Commercial CI,4.8,381224.42,3,1.0
+B-3010,business,2023-07-10,False,,,,0,
+A-3026,consumer,2023-07-27,True,Consumer Auto,10.0,27025.64,5,5.0
+A-3027,consumer,2025-08-12,False,,,,0,
+A-3028,consumer,2023-06-11,True,Commercial CI,8.7,583177.11,4,3.0
+A-3029,consumer,2023-08-30,False,,,,0,
+A-3030,consumer,2023-02-20,False,,,,0,
+A-3031,consumer,2024-07-01,True,Commercial CI,6.3,46925.05,7,8.0
+A-3032,consumer,2021-10-09,False,,,,0,
+A-3033,consumer,2025-03-22,True,Commercial CI,7.8,244965.25,5,2.0
+B-3011,business,2023-06-06,True,Commercial CRE,8.7,347810.3,5,2.0
+A-3034,consumer,2025-06-16,False,,,,0,
+B-3012,business,2022-08-24,True,Commercial CI,9.1,65603.29,82,6.0
+A-3035,consumer,2023-10-25,False,,,,0,
+B-3013,business,2021-10-18,False,,,,0,
+A-3036,consumer,2022-02-11,False,,,,0,
+A-3037,consumer,2022-08-17,True,Commercial CRE,7.6,2417277.63,5,5.0
+A-3038,consumer,2025-03-21,True,Commercial CI,7.5,252253.21,2,2.0
+A-3039,consumer,2024-02-08,False,,,,0,
+A-3040,consumer,2023-10-04,True,Commercial CRE,4.5,2110939.36,24,6.0
+A-3041,consumer,2024-06-12,False,,,,0,
+A-3042,consumer,2022-07-08,True,Commercial CRE,4.2,2348347.66,56,5.0
+B-3014,business,2019-09-30,True,Commercial CI,8.1,122590.43,9,5.0
+A-3043,consumer,2024-03-14,False,,,,0,
+A-3044,consumer,2020-01-30,True,Commercial CRE,9.7,348404.58,3,9.0
+B-3015,business,2020-01-23,False,,,,0,
+A-3045,consumer,2023-02-09,True,Consumer Auto,9.3,39267.55,3,5.0
+A-3046,consumer,2023-02-11,False,,,,0,
+A-3047,consumer,2025-04-19,False,,,,0,
+A-3048,consumer,2021-06-20,False,,,,0,
+A-3049,consumer,2022-11-19,False,,,,0,
+B-3016,business,2025-12-22,True,Commercial CI,5.5,574048.31,5,5.0
+B-3017,business,2019-12-04,True,Commercial CRE,8.3,1296060.55,5,1.0
+B-3018,business,2020-08-29,True,Commercial CRE,4.0,407828.26,11,1.0
+A-3050,consumer,2024-08-08,False,,,,0,
+B-3019,business,2019-07-31,True,Commercial CI,5.5,550379.33,10,2.0
+A-3051,consumer,2020-10-27,False,,,,0,
+A-3052,consumer,2021-01-22,True,Consumer Auto,8.5,6846.33,0,1.0
+A-3053,consumer,2023-05-29,True,Consumer Auto,7.6,44894.82,10,2.0
+B-3020,business,2025-03-30,True,Consumer Auto,5.9,33994.96,21,7.0
+A-3054,consumer,2021-03-31,True,Commercial CRE,5.7,887796.0,8,3.0
+A-3055,consumer,2020-12-08,False,,,,0,
+A-3056,consumer,2020-06-16,True,Consumer Auto,5.5,12304.86,6,1.0
+A-3057,consumer,2022-10-21,False,,,,0,
+A-3058,consumer,2021-05-02,False,,,,0,
+A-3059,consumer,2023-01-27,True,Consumer Auto,7.9,21576.33,7,5.0
+A-3060,consumer,2019-05-29,False,,,,0,
+A-3061,consumer,2020-08-25,True,Commercial CRE,8.2,1601241.67,5,5.0
+B-3021,business,2021-07-14,False,,,,0,
+B-3022,business,2020-08-28,True,Commercial CRE,4.6,2636892.36,10,5.0
+A-3062,consumer,2020-06-20,True,Commercial CRE,5.9,476843.27,1,9.0
+A-3063,consumer,2019-08-27,False,,,,0,
+B-3023,business,2019-10-11,True,Commercial CI,6.6,536764.01,3,3.0
+B-3024,business,2025-08-07,False,,,,0,
+A-3064,consumer,2024-12-06,False,,,,0,
+B-3025,business,2019-04-28,False,,,,0,
+B-3026,business,2024-04-29,True,Commercial CRE,7.8,1856439.38,7,3.0
+A-3065,consumer,2021-11-11,False,,,,0,
+B-3027,business,2022-12-03,True,Consumer Auto,6.2,30897.91,3,1.0
+A-3066,consumer,2023-11-28,True,Consumer Auto,6.1,37325.87,8,8.0
+A-3067,consumer,2023-11-16,True,Consumer Auto,8.1,30777.92,0,2.0
+B-3028,business,2023-05-21,False,,,,0,
+B-3029,business,2023-08-17,True,Commercial CRE,4.3,1575600.32,7,2.0
+A-3068,consumer,2025-02-04,False,,,,0,
+A-3069,consumer,2022-03-12,False,,,,0,
+A-3070,consumer,2021-11-05,False,,,,0,
+A-3071,consumer,2023-01-25,True,Consumer Auto,9.3,23099.08,8,1.0
+B-3030,business,2024-05-17,False,,,,0,
+A-3072,consumer,2024-05-27,True,Commercial CRE,6.6,1612688.51,5,6.0
+A-3073,consumer,2024-06-11,False,,,,0,
+B-3031,business,2023-01-02,True,Commercial CI,7.6,87557.15,7,3.0
+B-3032,business,2022-12-25,True,Commercial CRE,8.5,2774874.07,57,9.0
+B-3033,business,2023-05-29,True,Commercial CRE,7.3,1521468.68,8,6.0
+A-3074,consumer,2019-09-24,True,Commercial CI,7.1,101002.05,60,8.0
+A-3075,consumer,2021-10-11,False,,,,0,
+A-3076,consumer,2024-08-31,True,Commercial CI,9.9,44039.48,9,2.0
+A-3077,consumer,2022-12-06,True,Commercial CRE,4.7,247989.59,3,9.0
+A-3078,consumer,2022-12-19,True,Commercial CRE,8.6,270158.39,3,8.0
+A-3079,consumer,2022-03-12,True,Commercial CRE,5.9,1853396.82,72,3.0
+B-3034,business,2025-12-24,False,,,,0,
+B-3035,business,2025-11-06,True,Commercial CI,4.6,295166.02,9,5.0
+A-3080,consumer,2022-06-11,True,Commercial CRE,5.7,305777.66,2,9.0
+A-3081,consumer,2023-11-16,False,,,,0,
+A-3082,consumer,2019-07-27,False,,,,0,
+A-3083,consumer,2023-12-22,True,Commercial CRE,5.5,1080296.84,0,8.0
+A-3084,consumer,2024-06-22,True,Consumer Auto,4.2,33929.51,6,4.0
+A-3085,consumer,2023-12-03,False,,,,0,
+A-3086,consumer,2022-06-11,False,,,,0,
+B-3036,business,2022-07-02,False,,,,0,
+B-3037,business,2022-06-27,True,Commercial CRE,6.9,1583319.23,3,3.0
+A-3087,consumer,2024-06-16,True,Commercial CI,5.5,172557.69,29,7.0
+A-3088,consumer,2024-12-03,True,Commercial CI,8.2,521159.66,5,1.0
+B-3038,business,2021-11-30,False,,,,0,
+B-3039,business,2019-05-18,True,Commercial CRE,9.8,1192252.89,0,7.0
+A-3089,consumer,2023-03-18,False,,,,0,
+A-3090,consumer,2022-11-20,False,,,,0,
+B-3040,business,2020-01-24,True,Commercial CI,6.0,489004.6,6,5.0
+B-3041,business,2021-03-19,True,Consumer Auto,7.7,9377.58,4,1.0
+A-3091,consumer,2021-11-24,True,Commercial CRE,4.0,241882.51,0,9.0
+A-3092,consumer,2025-05-05,False,,,,0,
+B-3042,business,2025-10-18,False,,,,0,
+B-3043,business,2020-01-18,True,Commercial CI,6.2,75492.67,8,2.0
+A-3093,consumer,2021-10-05,False,,,,0,
+A-3094,consumer,2022-04-19,False,,,,0,
+B-3044,business,2019-09-10,False,,,,0,
+A-3095,consumer,2020-03-04,True,Commercial CI,8.2,194217.18,2,3.0
+A-3096,consumer,2025-06-17,False,,,,0,
+A-3097,consumer,2021-06-06,False,,,,0,
+A-3098,consumer,2020-06-07,True,Consumer Auto,8.1,29541.7,7,5.0
+B-3045,business,2020-08-30,False,,,,0,
+A-3099,consumer,2024-01-24,False,,,,0,
+A-3100,consumer,2024-02-20,True,Commercial CRE,7.9,300643.84,4,3.0
+A-3101,consumer,2020-08-28,True,Commercial CRE,4.1,958535.26,6,1.0
+A-3102,consumer,2023-08-20,True,Consumer Auto,5.4,21822.68,52,1.0
+A-3103,consumer,2021-06-12,False,,,,0,
+A-3104,consumer,2022-03-15,False,,,,0,
+A-3105,consumer,2024-08-31,False,,,,0,
+A-3106,consumer,2025-12-08,False,,,,0,
+A-3107,consumer,2023-10-28,False,,,,0,
+A-3108,consumer,2025-03-17,False,,,,0,
+A-3109,consumer,2022-06-14,False,,,,0,
+A-3110,consumer,2023-04-06,False,,,,0,
+B-3046,business,2019-06-17,False,,,,0,
+B-3047,business,2021-01-02,False,,,,0,
+A-3111,consumer,2025-01-28,True,Commercial CRE,9.6,812519.6,10,4.0
+A-3112,consumer,2020-03-24,False,,,,0,
+B-3048,business,2019-07-22,False,,,,0,
+B-3049,business,2024-02-07,False,,,,0,
+A-3113,consumer,2025-11-23,True,Commercial CRE,5.4,316072.35,10,7.0
+B-3050,business,2023-08-09,True,Consumer Auto,9.5,35042.75,3,5.0
+B-3051,business,2024-12-30,True,Commercial CI,6.3,334399.46,4,4.0
+A-3114,consumer,2022-02-15,True,Consumer Auto,6.7,16394.41,2,5.0
+B-3052,business,2025-11-13,False,,,,0,
+A-3115,consumer,2022-09-03,False,,,,0,
+A-3116,consumer,2023-05-06,True,Consumer Auto,9.2,14543.35,8,6.0
+A-3117,consumer,2024-05-24,True,Consumer Auto,5.3,39250.67,4,5.0
+A-3118,consumer,2023-11-17,False,,,,0,
+B-3053,business,2019-04-27,True,Commercial CRE,4.5,1674940.91,10,6.0
+A-3119,consumer,2025-10-07,False,,,,0,
+A-3120,consumer,2023-08-27,False,,,,0,
+A-3121,consumer,2020-12-29,True,Commercial CI,8.6,504054.09,9,7.0
+A-3122,consumer,2020-11-07,True,Consumer Auto,5.8,10774.04,2,2.0
+A-3123,consumer,2023-10-23,False,,,,0,
+A-3124,consumer,2021-02-05,True,Consumer Auto,9.1,6164.5,8,7.0
+A-3125,consumer,2020-06-11,False,,,,0,
+A-3126,consumer,2020-12-29,True,Commercial CRE,4.1,2074756.61,4,7.0
+A-3127,consumer,2020-02-03,False,,,,0,
+B-3054,business,2023-09-15,False,,,,0,
+A-3128,consumer,2025-08-27,False,,,,0,
+A-3129,consumer,2020-10-16,False,,,,0,
+A-3130,consumer,2024-06-23,True,Commercial CI,7.9,136444.31,2,3.0
+A-3131,consumer,2020-01-28,False,,,,0,
+A-3132,consumer,2022-07-25,True,Commercial CRE,5.0,428813.46,2,4.0
+B-3055,business,2023-02-11,True,Commercial CI,5.6,493457.56,8,2.0
+B-3056,business,2020-03-01,True,Commercial CRE,4.9,1765743.42,0,5.0
+A-3133,consumer,2025-12-07,True,Commercial CRE,5.8,2226284.63,9,9.0
+A-3134,consumer,2021-09-06,True,Commercial CRE,5.9,270780.9,1,5.0
+A-3135,consumer,2021-03-30,False,,,,0,
+A-3136,consumer,2025-02-01,True,Consumer Auto,7.5,8939.83,2,5.0
+A-3137,consumer,2019-08-21,False,,,,0,
+A-3138,consumer,2019-09-03,False,,,,0,
+B-3057,business,2022-10-19,True,Consumer Auto,9.6,36480.17,3,2.0
+A-3139,consumer,2020-05-19,True,Commercial CRE,8.4,741473.66,2,7.0
+A-3140,consumer,2019-05-20,False,,,,0,
+A-3141,consumer,2020-12-13,False,,,,0,
+B-3058,business,2019-07-20,True,Commercial CI,4.4,532604.78,25,4.0
+A-3142,consumer,2019-07-14,True,Commercial CRE,8.6,1268914.64,30,5.0
+B-3059,business,2020-08-17,False,,,,0,
+B-3060,business,2023-10-25,True,Commercial CI,7.3,133368.61,29,6.0
+A-3143,consumer,2024-05-23,False,,,,0,
+A-3144,consumer,2020-06-12,True,Consumer Auto,7.1,38548.54,10,6.0
+A-3145,consumer,2023-05-12,False,,,,0,
+B-3061,business,2020-08-23,False,,,,0,
+A-3146,consumer,2021-04-29,True,Commercial CRE,6.7,1825786.86,0,2.0
+A-3147,consumer,2025-06-30,False,,,,0,
+B-3062,business,2023-05-24,True,Commercial CRE,4.0,690897.69,0,4.0
+B-3063,business,2024-06-04,False,,,,0,
+A-3148,consumer,2023-04-28,False,,,,0,
+A-3149,consumer,2019-08-02,True,Commercial CI,5.1,173771.71,26,1.0
+A-3150,consumer,2023-10-12,False,,,,0,
+B-3064,business,2019-06-06,True,Commercial CRE,6.3,1195632.21,9,6.0
+B-3065,business,2023-06-09,False,,,,0,
+A-3151,consumer,2021-01-27,False,,,,0,
+B-3066,business,2022-02-27,True,Commercial CI,5.7,109579.47,4,4.0
+A-3152,consumer,2025-04-28,True,Commercial CRE,9.4,1435606.99,2,5.0
+A-3153,consumer,2025-07-01,False,,,,0,
+A-3154,consumer,2023-01-13,False,,,,0,
+A-3155,consumer,2022-08-21,False,,,,0,
+A-3156,consumer,2024-04-01,False,,,,0,
+B-3067,business,2022-07-08,False,,,,0,
+A-3157,consumer,2021-01-31,False,,,,0,
+A-3158,consumer,2023-04-15,False,,,,0,
+A-3159,consumer,2025-09-12,False,,,,0,
+A-3160,consumer,2019-05-15,False,,,,0,
+B-3068,business,2021-01-17,True,Consumer Auto,7.7,41124.65,18,3.0
+A-3161,consumer,2019-08-26,False,,,,0,
+A-3162,consumer,2022-04-19,True,Consumer Auto,7.0,19436.95,2,5.0
+B-3069,business,2022-12-16,True,Commercial CI,9.8,125176.64,4,2.0
+A-3163,consumer,2019-06-16,True,Commercial CI,7.5,320585.86,34,9.0
+B-3070,business,2025-01-26,False,,,,0,
+A-3164,consumer,2020-07-26,True,Commercial CI,9.8,595306.49,1,6.0
+A-3165,consumer,2022-02-22,False,,,,0,
+A-3166,consumer,2020-05-22,True,Commercial CRE,5.9,1622846.11,1,8.0
+A-3167,consumer,2025-08-07,False,,,,0,
+A-3168,consumer,2021-08-01,False,,,,0,
+B-3071,business,2025-03-13,True,Commercial CRE,4.0,1896925.34,17,4.0
+A-3169,consumer,2021-10-20,True,Consumer Auto,4.6,41321.56,8,4.0
+B-3072,business,2022-04-11,True,Commercial CRE,7.4,2610816.13,5,8.0
+B-3073,business,2021-05-20,False,,,,0,
+A-3170,consumer,2025-12-09,False,,,,0,
+A-3171,consumer,2021-07-18,False,,,,0,
+A-3172,consumer,2021-08-03,False,,,,0,
+B-3074,business,2020-09-10,False,,,,0,
+A-3173,consumer,2020-11-19,True,Consumer Auto,6.0,11144.36,45,1.0
+A-3174,consumer,2020-02-22,False,,,,0,
+B-3075,business,2021-05-30,False,,,,0,
+A-3175,consumer,2024-07-10,True,Commercial CRE,4.8,1535358.7,8,2.0
+A-3176,consumer,2022-01-02,True,Commercial CRE,6.5,849174.52,2,6.0
+A-3177,consumer,2020-06-11,True,Commercial CI,4.9,35397.9,7,1.0
+A-3178,consumer,2020-04-09,False,,,,0,
+B-3076,business,2022-01-03,False,,,,0,
+A-3179,consumer,2023-11-13,False,,,,0,
+B-3077,business,2021-02-21,False,,,,0,
+A-3180,consumer,2020-06-28,False,,,,0,
+A-3181,consumer,2024-08-31,False,,,,0,
+B-3078,business,2025-10-29,False,,,,0,
+A-3182,consumer,2019-11-30,False,,,,0,
+A-3183,consumer,2023-03-30,False,,,,0,
+B-3079,business,2021-03-06,True,Commercial CRE,5.3,327429.81,10,9.0
+A-3184,consumer,2021-11-08,False,,,,0,
+A-3185,consumer,2019-10-27,False,,,,0,
+B-3080,business,2022-06-28,True,Commercial CRE,8.7,468468.53,4,8.0
+A-3186,consumer,2025-06-09,False,,,,0,
+B-3081,business,2021-08-08,True,Commercial CI,7.1,476177.73,6,5.0
+A-3187,consumer,2022-05-29,True,Commercial CRE,5.5,531925.09,12,2.0
+A-3188,consumer,2023-05-27,True,Commercial CRE,8.9,1872779.37,22,4.0
+A-3189,consumer,2021-07-22,False,,,,0,
+A-3190,consumer,2023-03-27,False,,,,0,
+B-3082,business,2019-07-26,False,,,,0,
+A-3191,consumer,2022-03-26,False,,,,0,
+A-3192,consumer,2024-08-06,False,,,,0,
+A-3193,consumer,2025-09-24,False,,,,0,
+B-3083,business,2025-10-26,True,Commercial CI,6.3,308891.98,0,2.0
+A-3194,consumer,2025-08-04,False,,,,0,
+B-3084,business,2025-02-05,True,Commercial CRE,8.6,308905.17,39,4.0
+A-3195,consumer,2021-03-24,True,Consumer Auto,7.3,41022.46,9,4.0
+B-3085,business,2024-04-16,False,,,,0,
+A-3196,consumer,2021-10-05,False,,,,0,
+A-3197,consumer,2023-10-11,False,,,,0,
+B-3086,business,2025-12-14,False,,,,0,
+A-3198,consumer,2020-12-15,True,Consumer Auto,5.2,18493.87,26,3.0
+B-3087,business,2020-08-05,False,,,,0,
+A-3199,consumer,2021-06-28,True,Commercial CI,6.8,544724.91,5,4.0
+A-3200,consumer,2020-10-29,False,,,,0,
+A-3201,consumer,2021-12-08,False,,,,0,
+A-3202,consumer,2022-05-11,True,Commercial CI,8.6,597781.45,0,6.0
+A-3203,consumer,2025-06-10,False,,,,0,
+A-3204,consumer,2020-12-12,False,,,,0,
+A-3205,consumer,2024-01-02,True,Commercial CI,9.0,317727.68,3,2.0
+B-3088,business,2025-08-16,True,Commercial CI,7.4,331272.85,5,1.0
+A-3206,consumer,2023-05-08,False,,,,0,
+A-3207,consumer,2025-09-27,False,,,,0,
+A-3208,consumer,2019-06-28,False,,,,0,
+A-3209,consumer,2021-09-25,False,,,,0,
+B-3089,business,2022-06-06,False,,,,0,
+B-3090,business,2021-03-21,True,Commercial CI,7.3,248292.15,2,6.0
+A-3210,consumer,2025-11-05,False,,,,0,
+A-3211,consumer,2024-05-22,False,,,,0,
+B-3091,business,2024-11-09,True,Consumer Auto,6.2,41575.13,24,8.0
+A-3212,consumer,2022-08-20,False,,,,0,
+A-3213,consumer,2020-09-21,False,,,,0,
+A-3214,consumer,2024-09-27,False,,,,0,
+B-3092,business,2019-11-03,True,Commercial CI,5.5,104745.13,7,4.0
+B-3093,business,2023-07-03,False,,,,0,
+A-3215,consumer,2019-07-30,False,,,,0,
+A-3216,consumer,2022-04-22,False,,,,0,
+B-3094,business,2020-05-18,True,Commercial CRE,7.5,1054554.95,5,8.0
+B-3095,business,2025-03-02,True,Consumer Auto,4.3,34821.95,3,6.0
+B-3096,business,2020-01-26,False,,,,0,
+B-3097,business,2021-08-16,False,,,,0,
+A-3217,consumer,2019-05-28,False,,,,0,
+A-3218,consumer,2023-09-15,False,,,,0,
+A-3219,consumer,2020-09-09,True,Commercial CRE,4.0,2248976.86,3,6.0
+A-3220,consumer,2020-02-20,False,,,,0,
+B-3098,business,2025-03-03,True,Commercial CI,9.3,458507.93,0,8.0
+A-3221,consumer,2020-01-26,False,,,,0,
+A-3222,consumer,2025-12-04,False,,,,0,
+A-3223,consumer,2024-12-06,False,,,,0,
+B-3099,business,2024-12-20,True,Commercial CI,5.1,160540.11,1,3.0
+A-3224,consumer,2022-12-12,False,,,,0,
+A-3225,consumer,2025-08-25,False,,,,0,
+A-3226,consumer,2020-02-29,False,,,,0,
+A-3227,consumer,2023-12-15,False,,,,0,
+B-3100,business,2020-03-19,False,,,,0,
+A-3228,consumer,2019-07-20,False,,,,0,
+B-3101,business,2023-07-21,False,,,,0,
+A-3229,consumer,2021-07-08,False,,,,0,
+A-3230,consumer,2022-07-10,True,Consumer Auto,6.6,6000.93,7,1.0
+B-3102,business,2024-06-04,True,Commercial CI,5.5,473072.35,7,4.0
+A-3231,consumer,2023-10-07,True,Consumer Auto,9.4,16547.73,8,4.0
+B-3103,business,2020-04-07,True,Consumer Auto,9.2,9100.08,3,3.0
+A-3232,consumer,2019-09-23,False,,,,0,
+A-3233,consumer,2022-07-25,False,,,,0,
+A-3234,consumer,2024-06-12,False,,,,0,
+A-3235,consumer,2021-01-01,True,Commercial CRE,9.9,2465033.24,17,4.0
+B-3104,business,2023-07-22,False,,,,0,
+A-3236,consumer,2024-11-27,False,,,,0,
+A-3237,consumer,2024-02-26,True,Commercial CRE,5.3,1349033.56,9,3.0
+B-3105,business,2022-01-25,False,,,,0,
+A-3238,consumer,2025-03-20,True,Commercial CI,7.5,219020.16,0,5.0
+B-3106,business,2025-05-14,True,Commercial CI,6.3,347773.55,4,2.0
+B-3107,business,2020-12-27,True,Commercial CRE,4.6,1194539.31,5,6.0
+A-3239,consumer,2025-08-28,False,,,,0,
+A-3240,consumer,2020-09-28,True,Commercial CRE,6.8,1586183.87,0,9.0
+A-3241,consumer,2020-04-07,False,,,,0,
+B-3108,business,2019-08-06,True,Commercial CI,5.9,542176.63,7,4.0
+A-3242,consumer,2025-07-03,False,,,,0,
+A-3243,consumer,2022-05-26,True,Commercial CI,4.9,538398.34,4,5.0
+B-3109,business,2019-11-16,False,,,,0,
+B-3110,business,2024-11-19,True,Commercial CRE,4.5,464010.62,8,4.0
+A-3244,consumer,2019-08-04,False,,,,0,
+B-3111,business,2022-11-03,False,,,,0,
+A-3245,consumer,2019-07-12,True,Commercial CRE,9.1,2341052.01,3,5.0
+B-3112,business,2019-10-24,False,,,,0,
+A-3246,consumer,2021-08-19,True,Consumer Auto,7.1,34095.63,3,1.0
+A-3247,consumer,2024-09-28,True,Commercial CRE,4.7,1783085.66,4,3.0
+B-3113,business,2020-11-23,False,,,,0,
+B-3114,business,2024-03-06,True,Commercial CRE,6.8,1707823.2,19,9.0
+A-3248,consumer,2022-12-12,False,,,,0,
+B-3115,business,2025-11-12,False,,,,0,
+A-3249,consumer,2021-04-19,True,Commercial CRE,4.6,1312552.8,24,6.0
+A-3250,consumer,2023-11-29,False,,,,0,
+A-3251,consumer,2025-01-03,False,,,,0,
+A-3252,consumer,2020-07-10,False,,,,0,
+A-3253,consumer,2022-09-15,False,,,,0,
+A-3254,consumer,2022-12-07,False,,,,0,
+A-3255,consumer,2024-03-10,False,,,,0,
+A-3256,consumer,2022-01-04,False,,,,0,
+A-3257,consumer,2025-02-19,False,,,,0,
+A-3258,consumer,2019-10-23,True,Commercial CI,9.7,147818.45,5,2.0
+A-3259,consumer,2020-09-03,True,Consumer Auto,6.2,26504.84,1,4.0
+A-3260,consumer,2024-09-12,False,,,,0,
+B-3116,business,2022-06-10,False,,,,0,
+A-3261,consumer,2024-09-28,True,Commercial CI,6.0,157614.72,0,5.0
+A-3262,consumer,2025-01-15,True,Commercial CI,8.6,513149.56,1,4.0
+A-3263,consumer,2022-07-11,False,,,,0,
+A-3264,consumer,2020-11-15,True,Commercial CI,8.1,494448.58,41,6.0
+A-3265,consumer,2020-02-08,True,Consumer Auto,4.7,15917.21,0,3.0
+B-3117,business,2023-04-17,False,,,,0,
+A-3266,consumer,2025-10-26,True,Consumer Auto,7.4,7608.03,7,2.0
+B-3118,business,2019-12-08,True,Commercial CRE,4.2,450760.43,2,2.0
+B-3119,business,2019-10-23,False,,,,0,
+A-3267,consumer,2020-04-15,True,Commercial CRE,8.8,405549.87,8,7.0
+B-3120,business,2022-08-19,True,Commercial CI,4.4,207209.46,1,4.0
+A-3268,consumer,2019-12-31,False,,,,0,
+A-3269,consumer,2024-09-04,True,Commercial CRE,8.3,1129281.41,36,4.0
+B-3121,business,2022-04-04,True,Consumer Auto,5.2,30011.84,9,2.0
+A-3270,consumer,2019-07-14,False,,,,0,
+B-3122,business,2025-08-11,False,,,,0,
+A-3271,consumer,2020-05-31,False,,,,0,
+B-3123,business,2024-02-16,False,,,,0,
+A-3272,consumer,2022-02-03,False,,,,0,
+A-3273,consumer,2024-01-18,False,,,,0,
+A-3274,consumer,2025-01-30,False,,,,0,
+B-3124,business,2025-06-27,True,Commercial CI,9.1,306095.51,6,1.0
+B-3125,business,2020-10-07,True,Commercial CI,8.7,461867.68,20,7.0
+A-3275,consumer,2021-12-01,False,,,,0,
+A-3276,consumer,2019-09-03,False,,,,0,
+A-3277,consumer,2021-01-22,False,,,,0,
+B-3126,business,2020-08-22,False,,,,0,
+A-3278,consumer,2022-05-19,False,,,,0,
+B-3127,business,2022-11-02,True,Commercial CI,7.7,35007.32,28,6.0
+B-3128,business,2021-01-26,True,Commercial CI,6.0,102058.7,10,2.0
+A-3279,consumer,2023-06-06,False,,,,0,
+A-3280,consumer,2021-05-17,False,,,,0,
+A-3281,consumer,2023-05-18,False,,,,0,
+B-3129,business,2025-05-02,True,Consumer Auto,8.4,32429.33,9,2.0
+B-3130,business,2025-08-28,False,,,,0,
+B-3131,business,2023-01-14,True,Commercial CRE,7.3,1691290.56,0,4.0
+A-3282,consumer,2021-10-15,False,,,,0,
+A-3283,consumer,2023-09-01,True,Commercial CRE,4.0,1672327.39,1,5.0
+A-3284,consumer,2020-04-24,False,,,,0,
+A-3285,consumer,2023-06-11,False,,,,0,
+A-3286,consumer,2019-12-05,False,,,,0,
+A-3287,consumer,2019-07-13,True,Commercial CI,5.5,94480.77,1,4.0
+A-3288,consumer,2024-02-22,False,,,,0,
+B-3132,business,2020-06-21,True,Commercial CRE,7.0,2092939.8,8,9.0
+B-3133,business,2022-05-23,True,Commercial CI,7.7,458623.83,2,5.0
+B-3134,business,2021-02-09,True,Consumer Auto,9.2,34776.73,7,7.0
+B-3135,business,2023-03-21,True,Commercial CRE,9.9,1602047.57,35,9.0
+B-3136,business,2023-04-13,True,Consumer Auto,9.5,18795.66,7,8.0
+A-3289,consumer,2023-04-25,False,,,,0,
+B-3137,business,2021-05-19,True,Commercial CRE,7.0,1007187.66,7,8.0
+A-3290,consumer,2025-10-05,True,Commercial CRE,4.5,1988520.59,4,1.0
+A-3291,consumer,2024-06-18,False,,,,0,
+A-3292,consumer,2019-06-13,False,,,,0,
+B-3138,business,2020-03-29,True,Commercial CRE,9.7,814691.34,2,7.0
+A-3293,consumer,2025-03-16,False,,,,0,
+A-3294,consumer,2023-11-18,False,,,,0,
+A-3295,consumer,2021-09-28,False,,,,0,
+B-3139,business,2024-10-13,True,Commercial CRE,4.7,1150704.93,62,5.0
+B-3140,business,2021-03-06,True,Commercial CI,6.7,552266.63,2,4.0
+A-3296,consumer,2024-05-18,False,,,,0,
+A-3297,consumer,2019-10-16,False,,,,0,
+A-3298,consumer,2022-04-23,False,,,,0,
+A-3299,consumer,2025-11-24,False,,,,0,
+A-3300,consumer,2024-03-01,False,,,,0,
+A-3301,consumer,2024-05-05,True,Consumer Auto,9.9,18977.44,14,9.0
+A-3302,consumer,2025-03-18,False,,,,0,
+B-3141,business,2019-08-31,False,,,,0,
+B-3142,business,2021-02-04,False,,,,0,
+A-3303,consumer,2020-02-04,False,,,,0,
+A-3304,consumer,2019-06-25,False,,,,0,
+A-3305,consumer,2022-06-13,False,,,,0,
+A-3306,consumer,2021-07-12,False,,,,0,
+A-3307,consumer,2020-06-25,False,,,,0,
+A-3308,consumer,2023-09-12,False,,,,0,
+A-3309,consumer,2023-07-20,False,,,,0,
+A-3310,consumer,2023-06-08,False,,,,0,
+B-3143,business,2024-08-15,False,,,,0,
+A-3311,consumer,2025-09-10,True,Commercial CI,7.2,386563.03,0,6.0
+A-3312,consumer,2024-09-08,False,,,,0,
+B-3144,business,2019-08-31,False,,,,0,
+A-3313,consumer,2022-10-04,False,,,,0,
+A-3314,consumer,2022-10-01,False,,,,0,
+A-3315,consumer,2023-06-27,True,Consumer Auto,8.1,31156.03,9,5.0
+A-3316,consumer,2021-01-18,False,,,,0,
+B-3145,business,2021-11-20,True,Commercial CI,8.1,265054.01,9,8.0
+B-3146,business,2024-05-24,False,,,,0,
+B-3147,business,2022-04-21,True,Commercial CI,9.5,164167.56,7,6.0
+A-3317,consumer,2025-12-16,False,,,,0,
+A-3318,consumer,2025-10-03,False,,,,0,
+A-3319,consumer,2024-01-23,False,,,,0,
+A-3320,consumer,2023-10-31,False,,,,0,
+A-3321,consumer,2025-01-15,False,,,,0,
+A-3322,consumer,2020-08-20,True,Commercial CRE,5.1,1932034.72,10,3.0
+A-3323,consumer,2025-03-30,False,,,,0,
+B-3148,business,2019-08-29,True,Commercial CI,5.3,434211.56,5,2.0
+A-3324,consumer,2020-04-26,True,Commercial CRE,9.6,351524.37,7,4.0
+A-3325,consumer,2023-03-08,True,Commercial CI,6.1,452624.71,14,2.0
+A-3326,consumer,2019-10-25,False,,,,0,
+A-3327,consumer,2019-08-02,False,,,,0,
+A-3328,consumer,2022-06-14,False,,,,0,
+A-3329,consumer,2019-06-21,False,,,,0,
+A-3330,consumer,2021-11-11,True,Consumer Auto,9.6,7134.16,5,2.0
+B-3149,business,2019-05-27,False,,,,0,
+B-3150,business,2023-02-04,True,Commercial CRE,9.2,2560649.38,6,1.0
+A-3331,consumer,2019-05-13,True,Consumer Auto,8.5,32644.5,22,2.0
+A-3332,consumer,2022-10-02,False,,,,0,
+B-3151,business,2025-12-28,True,Commercial CI,9.6,202783.58,3,6.0
+A-3333,consumer,2022-02-15,False,,,,0,
+A-3334,consumer,2020-07-04,True,Commercial CI,5.1,157664.01,2,3.0
+A-3335,consumer,2023-12-15,False,,,,0,
+A-3336,consumer,2021-05-15,True,Consumer Auto,6.3,10778.75,4,1.0
+A-3337,consumer,2022-11-14,False,,,,0,
+B-3152,business,2020-11-17,False,,,,0,
+A-3338,consumer,2023-09-28,False,,,,0,
+B-3153,business,2019-12-27,False,,,,0,
+A-3339,consumer,2022-01-31,True,Consumer Auto,8.3,33651.29,88,8.0
+A-3340,consumer,2025-11-05,False,,,,0,
+B-3154,business,2024-05-21,False,,,,0,
+A-3341,consumer,2022-03-03,False,,,,0,
+A-3342,consumer,2021-04-16,False,,,,0,
+A-3343,consumer,2024-08-02,False,,,,0,
+A-3344,consumer,2021-12-18,False,,,,0,
+B-3155,business,2023-04-23,True,Consumer Auto,8.4,18721.19,6,7.0
+A-3345,consumer,2025-02-08,False,,,,0,
+A-3346,consumer,2024-10-08,False,,,,0,
+B-3156,business,2021-01-23,False,,,,0,
+A-3347,consumer,2021-11-28,False,,,,0,
+B-3157,business,2021-08-09,True,Consumer Auto,9.8,27417.45,29,1.0
+A-3348,consumer,2019-08-15,False,,,,0,
+A-3349,consumer,2023-02-19,False,,,,0,
+A-3350,consumer,2024-11-20,True,Commercial CI,8.6,306261.62,10,7.0
+A-3351,consumer,2023-07-15,True,Commercial CI,7.9,470153.15,5,2.0
+A-3352,consumer,2022-11-02,False,,,,0,
+A-3353,consumer,2022-03-19,True,Consumer Auto,9.9,38238.24,26,2.0
+A-3354,consumer,2022-11-21,False,,,,0,
+B-3158,business,2022-09-02,True,Commercial CI,9.1,367399.19,0,7.0
+B-3159,business,2022-01-08,True,Consumer Auto,4.4,21586.25,6,1.0
+A-3355,consumer,2025-04-29,False,,,,0,
+B-3160,business,2019-10-02,False,,,,0,
+B-3161,business,2021-12-25,True,Commercial CRE,9.0,1293605.84,3,1.0
+A-3356,consumer,2020-01-08,False,,,,0,
+A-3357,consumer,2024-07-11,True,Commercial CRE,5.4,2070385.78,5,5.0
+A-3358,consumer,2024-07-18,False,,,,0,
+A-3359,consumer,2024-05-14,False,,,,0,
+A-3360,consumer,2019-04-26,True,Consumer Auto,5.5,14739.81,0,2.0
+B-3162,business,2021-12-20,True,Consumer Auto,7.5,38381.59,12,4.0
+B-3163,business,2020-04-26,False,,,,0,
+A-3361,consumer,2026-01-15,False,,,,0,
+A-3362,consumer,2025-09-17,False,,,,0,
+A-3363,consumer,2023-01-26,True,Consumer Auto,9.1,28042.69,13,3.0
+B-3164,business,2025-02-25,True,Commercial CRE,8.0,446394.57,1,7.0
+A-3364,consumer,2023-01-03,False,,,,0,
+A-3365,consumer,2022-10-08,False,,,,0,
+A-3366,consumer,2023-09-10,False,,,,0,
+A-3367,consumer,2021-11-25,False,,,,0,
+A-3368,consumer,2021-07-25,False,,,,0,
+A-3369,consumer,2020-11-14,False,,,,0,
+A-3370,consumer,2019-05-15,True,Commercial CI,7.5,198013.08,6,5.0
+A-3371,consumer,2025-02-22,False,,,,0,
+B-3165,business,2024-06-23,True,Consumer Auto,8.2,17259.55,8,1.0
+A-3372,consumer,2023-02-14,True,Commercial CI,4.8,317980.39,6,6.0
+B-3166,business,2022-04-23,True,Commercial CI,4.6,489556.45,12,7.0
+B-3167,business,2019-08-07,True,Commercial CI,6.3,394987.95,1,5.0
+A-3373,consumer,2020-03-06,False,,,,0,
+B-3168,business,2021-03-26,False,,,,0,
+A-3374,consumer,2020-07-08,False,,,,0,
+A-3375,consumer,2019-09-05,True,Commercial CRE,5.7,2134409.09,3,7.0
+B-3169,business,2023-03-11,True,Consumer Auto,4.7,31055.31,6,1.0
+B-3170,business,2019-09-03,False,,,,0,
+A-3376,consumer,2021-12-26,True,Commercial CRE,9.9,1221723.53,7,7.0
+B-3171,business,2019-11-28,True,Commercial CI,7.0,589657.35,8,4.0
+A-3377,consumer,2021-08-25,False,,,,0,
+A-3378,consumer,2023-10-30,True,Commercial CRE,4.0,2185840.11,42,8.0
+A-3379,consumer,2024-06-23,False,,,,0,
+A-3380,consumer,2019-07-10,True,Commercial CRE,6.0,621774.19,19,3.0
+A-3381,consumer,2024-02-03,False,,,,0,
+B-3172,business,2025-12-18,True,Consumer Auto,6.8,37793.46,1,1.0
+A-3382,consumer,2021-10-19,True,Commercial CI,7.1,164464.75,7,5.0
+A-3383,consumer,2023-11-04,False,,,,0,
+A-3384,consumer,2021-06-25,False,,,,0,
+A-3385,consumer,2023-03-28,True,Consumer Auto,9.1,30966.14,27,2.0
+A-3386,consumer,2025-05-12,True,Consumer Auto,6.8,5734.02,8,1.0
+A-3387,consumer,2023-09-25,False,,,,0,
+A-3388,consumer,2025-11-27,False,,,,0,
+A-3389,consumer,2021-11-12,False,,,,0,
+A-3390,consumer,2022-11-28,False,,,,0,
+A-3391,consumer,2022-02-21,False,,,,0,
+A-3392,consumer,2023-03-07,False,,,,0,
+A-3393,consumer,2023-03-28,False,,,,0,
+A-3394,consumer,2023-09-27,True,Commercial CI,9.5,245101.02,9,7.0
+A-3395,consumer,2020-08-27,False,,,,0,
+A-3396,consumer,2020-09-29,False,,,,0,
+A-3397,consumer,2022-12-12,False,,,,0,
+A-3398,consumer,2021-10-08,True,Consumer Auto,9.4,39956.15,50,2.0
+B-3173,business,2019-09-15,False,,,,0,
+A-3399,consumer,2022-09-05,False,,,,0,
+B-3174,business,2021-08-17,True,Commercial CRE,10.0,828253.46,4,4.0
+A-3400,consumer,2019-05-10,True,Commercial CRE,9.4,2237618.86,28,9.0
+A-3401,consumer,2025-03-25,True,Commercial CRE,6.7,327490.95,0,4.0
+B-3175,business,2022-12-13,False,,,,0,
+B-3176,business,2024-10-10,False,,,,0,
+B-3177,business,2020-01-22,True,Consumer Auto,7.8,44877.71,0,7.0
+A-3402,consumer,2019-12-25,False,,,,0,
+B-3178,business,2022-01-31,True,Consumer Auto,8.5,32473.93,14,3.0
+B-3179,business,2024-12-31,True,Commercial CRE,4.4,655681.71,31,9.0
+A-3403,consumer,2020-01-04,False,,,,0,
+A-3404,consumer,2022-12-07,True,Consumer Auto,9.9,44891.45,5,1.0
+A-3405,consumer,2022-05-20,True,Commercial CI,5.6,168901.63,3,6.0
+A-3406,consumer,2019-10-07,False,,,,0,
+B-3180,business,2024-03-29,False,,,,0,
+A-3407,consumer,2025-08-06,True,Commercial CRE,7.1,1735255.4,5,9.0
+B-3181,business,2025-02-02,True,Commercial CI,8.7,576890.75,30,6.0
+A-3408,consumer,2023-07-25,False,,,,0,
+A-3409,consumer,2023-08-02,False,,,,0,
+A-3410,consumer,2025-10-19,False,,,,0,
+A-3411,consumer,2022-01-12,False,,,,0,
+B-3182,business,2019-09-08,True,Consumer Auto,7.3,21976.96,18,5.0
+B-3183,business,2025-05-14,True,Commercial CI,7.5,116454.3,8,1.0
+A-3412,consumer,2024-11-16,True,Consumer Auto,6.4,27202.16,5,3.0
+A-3413,consumer,2020-06-06,False,,,,0,
+A-3414,consumer,2021-11-15,False,,,,0,
+A-3415,consumer,2021-07-09,True,Commercial CRE,9.5,1334161.17,24,5.0
+B-3184,business,2023-12-01,False,,,,0,
+A-3416,consumer,2019-09-20,False,,,,0,
+A-3417,consumer,2025-09-18,True,Commercial CRE,9.5,1821265.8,11,9.0
+A-3418,consumer,2025-04-07,True,Commercial CRE,8.3,581706.47,1,4.0
+B-3185,business,2019-08-21,False,,,,0,
+A-3419,consumer,2021-04-19,False,,,,0,
+A-3420,consumer,2021-12-09,False,,,,0,
+A-3421,consumer,2021-01-16,True,Commercial CI,9.0,118649.99,4,6.0
+A-3422,consumer,2020-03-20,True,Commercial CI,4.1,245431.67,8,8.0
+A-3423,consumer,2022-03-12,False,,,,0,
+B-3186,business,2021-10-04,True,Commercial CRE,7.4,1920795.13,9,6.0
+A-3424,consumer,2022-09-21,False,,,,0,
+A-3425,consumer,2025-01-30,False,,,,0,
+A-3426,consumer,2025-03-27,False,,,,0,
+B-3187,business,2026-01-04,True,Commercial CRE,7.9,2774521.78,27,3.0
+B-3188,business,2023-04-07,True,Consumer Auto,9.5,25999.0,8,1.0
+A-3427,consumer,2020-11-08,False,,,,0,
+B-3189,business,2021-04-21,False,,,,0,
+A-3428,consumer,2021-06-17,True,Commercial CRE,4.3,1977269.82,10,8.0
+A-3429,consumer,2024-10-28,True,Commercial CRE,8.4,1668877.6,5,6.0
+A-3430,consumer,2020-05-13,True,Commercial CRE,6.5,509767.37,5,7.0
+B-3190,business,2024-08-26,False,,,,0,
+A-3431,consumer,2019-11-26,True,Commercial CI,4.9,202007.52,12,1.0
+A-3432,consumer,2019-05-26,False,,,,0,
+A-3433,consumer,2019-12-29,True,Commercial CRE,8.6,732087.75,0,2.0
+A-3434,consumer,2019-06-12,False,,,,0,
+B-3191,business,2025-10-13,True,Consumer Auto,7.0,13458.2,2,6.0
+A-3435,consumer,2021-10-17,True,Commercial CI,9.9,26617.22,6,2.0
+A-3436,consumer,2019-10-09,False,,,,0,
+A-3437,consumer,2019-06-09,True,Commercial CRE,9.2,2125045.46,6,5.0
+A-3438,consumer,2023-06-26,False,,,,0,
+A-3439,consumer,2024-05-24,True,Consumer Auto,8.1,34463.26,1,7.0
+A-3440,consumer,2024-06-18,False,,,,0,
+B-3192,business,2024-10-06,True,Commercial CRE,7.9,2801051.22,19,4.0
+B-3193,business,2024-06-02,False,,,,0,
+A-3441,consumer,2025-09-10,False,,,,0,
+A-3442,consumer,2020-12-03,False,,,,0,
+A-3443,consumer,2025-10-19,True,Commercial CI,4.4,231232.79,9,8.0
+A-3444,consumer,2024-08-18,True,Commercial CI,9.9,372992.94,2,5.0
+A-3445,consumer,2021-01-21,True,Consumer Auto,5.0,19435.23,16,3.0
+B-3194,business,2025-03-03,True,Consumer Auto,7.4,31450.0,10,1.0
+A-3446,consumer,2020-12-08,False,,,,0,
+A-3447,consumer,2022-06-29,False,,,,0,
+B-3195,business,2021-01-19,False,,,,0,
+B-3196,business,2023-07-17,True,Commercial CI,5.5,400702.88,3,1.0
+A-3448,consumer,2025-06-17,False,,,,0,
+A-3449,consumer,2024-10-12,True,Commercial CRE,7.6,606243.52,0,4.0
+B-3197,business,2025-12-20,True,Consumer Auto,9.9,23099.79,30,2.0
+A-3450,consumer,2023-10-06,False,,,,0,
+A-3451,consumer,2024-07-09,False,,,,0,
+A-3452,consumer,2024-03-04,True,Commercial CRE,6.9,261887.44,47,4.0
+B-3198,business,2025-07-26,False,,,,0,
+A-3453,consumer,2020-01-05,False,,,,0,
+B-3199,business,2025-07-28,True,Commercial CI,7.2,345091.28,6,5.0
+A-3454,consumer,2022-05-23,True,Commercial CI,4.9,536524.95,10,9.0
+A-3455,consumer,2025-01-01,False,,,,0,
+B-3200,business,2020-09-22,True,Commercial CI,8.0,262682.02,43,9.0
+A-3456,consumer,2021-12-29,False,,,,0,
+A-3457,consumer,2019-12-09,True,Consumer Auto,9.7,5949.81,2,2.0
+A-3458,consumer,2025-11-20,False,,,,0,
+A-3459,consumer,2023-04-26,True,Commercial CRE,4.9,1306336.59,10,7.0
+B-3201,business,2022-07-08,False,,,,0,
+A-3460,consumer,2020-04-17,False,,,,0,
+A-3461,consumer,2021-11-21,False,,,,0,
+A-3462,consumer,2022-03-27,False,,,,0,
+A-3463,consumer,2024-03-18,True,Commercial CI,9.5,360356.25,29,7.0
+A-3464,consumer,2020-10-14,False,,,,0,
+A-3465,consumer,2025-05-03,False,,,,0,
+A-3466,consumer,2025-11-02,True,Consumer Auto,9.8,24020.08,89,9.0
+B-3202,business,2022-10-08,False,,,,0,
+B-3203,business,2020-08-25,False,,,,0,
+A-3467,consumer,2019-10-17,False,,,,0,
+A-3468,consumer,2019-09-03,False,,,,0,
+A-3469,consumer,2019-07-31,False,,,,0,
+A-3470,consumer,2024-11-27,True,Consumer Auto,7.8,40685.12,1,2.0
+A-3471,consumer,2021-01-23,False,,,,0,
+A-3472,consumer,2023-09-22,False,,,,0,
+B-3204,business,2025-12-09,True,Consumer Auto,6.5,11490.35,6,1.0
+A-3473,consumer,2019-06-13,False,,,,0,
+A-3474,consumer,2025-09-11,False,,,,0,
+A-3475,consumer,2020-06-11,False,,,,0,
+A-3476,consumer,2021-10-17,True,Consumer Auto,6.2,44271.03,9,3.0
+A-3477,consumer,2020-04-10,True,Commercial CRE,5.4,898547.22,7,9.0
+A-3478,consumer,2021-03-05,False,,,,0,
+B-3205,business,2022-11-27,True,Consumer Auto,8.5,39198.95,1,4.0
+B-3206,business,2019-08-31,True,Consumer Auto,7.4,27296.29,1,6.0
+A-3479,consumer,2021-02-03,False,,,,0,
+A-3480,consumer,2019-07-23,False,,,,0,
+B-3207,business,2023-04-29,False,,,,0,
+A-3481,consumer,2020-04-27,False,,,,0,
+A-3482,consumer,2020-04-23,True,Consumer Auto,9.8,12838.0,5,5.0
+A-3483,consumer,2021-01-27,False,,,,0,
+A-3484,consumer,2020-03-01,False,,,,0,
+B-3208,business,2022-02-16,True,Commercial CRE,7.8,405978.04,20,7.0
+B-3209,business,2019-06-09,True,Commercial CRE,6.2,632873.6,9,9.0
+B-3210,business,2022-05-11,True,Commercial CI,8.0,450603.46,3,3.0
+A-3485,consumer,2025-11-14,False,,,,0,
+B-3211,business,2023-11-23,False,,,,0,
+A-3486,consumer,2019-12-11,False,,,,0,
+A-3487,consumer,2024-02-21,False,,,,0,
+A-3488,consumer,2023-03-22,True,Consumer Auto,4.5,35270.94,29,3.0
+B-3212,business,2021-06-02,False,,,,0,
+A-3489,consumer,2024-10-08,False,,,,0,
+A-3490,consumer,2024-10-11,False,,,,0,
+A-3491,consumer,2025-03-16,True,Consumer Auto,8.9,27165.28,9,2.0
+B-3213,business,2024-11-07,True,Commercial CI,8.2,415373.69,2,4.0
+A-3492,consumer,2025-11-27,False,,,,0,
+A-3493,consumer,2024-04-04,False,,,,0,
+A-3494,consumer,2019-09-10,False,,,,0,
+A-3495,consumer,2019-12-04,True,Commercial CRE,9.1,673585.57,4,6.0
+A-3496,consumer,2025-07-25,False,,,,0,
+A-3497,consumer,2024-11-23,False,,,,0,
+A-3498,consumer,2024-10-04,False,,,,0,
+B-3214,business,2021-12-16,True,Commercial CI,9.5,211425.08,0,2.0
+A-3499,consumer,2024-09-25,True,Commercial CI,4.7,367997.17,37,8.0
+A-3500,consumer,2026-01-11,True,Commercial CRE,6.8,1166680.97,2,5.0
+B-3215,business,2025-12-06,False,,,,0,
+A-3501,consumer,2023-03-02,True,Commercial CRE,9.5,265051.53,8,3.0
+A-3502,consumer,2024-04-19,True,Commercial CRE,6.6,293317.66,6,2.0
+B-3216,business,2022-06-01,True,Commercial CI,5.7,368175.3,12,2.0
+A-3503,consumer,2023-12-25,False,,,,0,
+B-3217,business,2021-01-28,True,Commercial CI,4.4,134095.48,0,7.0
+A-3504,consumer,2022-07-24,False,,,,0,
+A-3505,consumer,2021-07-28,False,,,,0,
+A-3506,consumer,2024-07-16,False,,,,0,
+A-3507,consumer,2025-05-09,False,,,,0,
+A-3508,consumer,2020-09-06,True,Consumer Auto,7.7,29270.59,5,4.0
+A-3509,consumer,2020-05-22,False,,,,0,
+A-3510,consumer,2021-07-13,True,Commercial CRE,7.9,1075910.47,8,8.0
+A-3511,consumer,2024-06-21,True,Commercial CI,8.2,125650.53,10,2.0
+A-3512,consumer,2020-11-19,False,,,,0,
+B-3218,business,2024-06-02,True,Consumer Auto,7.4,15196.08,17,3.0
+A-3513,consumer,2021-09-13,False,,,,0,
+B-3219,business,2024-06-24,False,,,,0,
+A-3514,consumer,2024-08-18,False,,,,0,
+A-3515,consumer,2025-01-01,False,,,,0,
+A-3516,consumer,2019-11-12,True,Commercial CI,5.0,219270.36,1,6.0
+A-3517,consumer,2019-12-16,True,Commercial CRE,9.3,2033754.61,86,9.0
+B-3220,business,2020-01-08,False,,,,0,
+B-3221,business,2021-02-21,True,Commercial CRE,8.1,651962.81,1,8.0
+B-3222,business,2024-06-06,True,Commercial CRE,6.1,2258450.22,7,1.0
+B-3223,business,2024-08-14,True,Commercial CRE,9.6,1985233.54,9,9.0
+B-3224,business,2022-06-27,True,Commercial CI,4.6,530873.76,3,3.0
+A-3518,consumer,2024-12-29,True,Consumer Auto,6.3,23633.66,7,6.0
+B-3225,business,2021-11-24,True,Commercial CI,5.9,422305.87,26,5.0
+A-3519,consumer,2024-07-04,False,,,,0,
+A-3520,consumer,2023-06-09,False,,,,0,
+A-3521,consumer,2020-11-19,False,,,,0,
+B-3226,business,2022-10-14,True,Commercial CI,6.6,490518.26,7,3.0
+A-3522,consumer,2025-12-10,False,,,,0,
+A-3523,consumer,2020-02-14,True,Commercial CI,9.7,396786.12,26,6.0
+A-3524,consumer,2020-07-21,False,,,,0,
+A-3525,consumer,2025-05-14,True,Commercial CRE,4.5,1866027.69,8,9.0
+A-3526,consumer,2023-03-11,False,,,,0,
+A-3527,consumer,2023-02-27,False,,,,0,
+A-3528,consumer,2021-05-14,False,,,,0,
+A-3529,consumer,2019-06-23,False,,,,0,
+A-3530,consumer,2025-06-12,False,,,,0,
+A-3531,consumer,2023-04-29,False,,,,0,
+B-3227,business,2022-05-23,True,Consumer Auto,8.8,22819.03,27,7.0
+B-3228,business,2023-01-26,True,Consumer Auto,9.1,15539.01,8,4.0
+A-3532,consumer,2021-07-10,True,Commercial CI,8.1,513364.51,1,2.0
+A-3533,consumer,2023-03-19,False,,,,0,
+B-3229,business,2023-04-25,True,Consumer Auto,6.1,44705.61,6,3.0
+B-3230,business,2020-01-30,False,,,,0,
+A-3534,consumer,2025-01-30,True,Consumer Auto,5.8,31649.49,8,1.0
+B-3231,business,2022-05-20,True,Commercial CRE,5.1,900666.61,0,3.0
+A-3535,consumer,2022-07-06,False,,,,0,
+A-3536,consumer,2021-06-21,True,Consumer Auto,4.7,29854.55,0,4.0
+A-3537,consumer,2021-11-21,False,,,,0,
+B-3232,business,2025-01-19,True,Commercial CI,7.2,470690.63,4,6.0
+B-3233,business,2020-05-19,True,Consumer Auto,5.3,6250.12,22,5.0
+A-3538,consumer,2024-04-19,True,Commercial CRE,4.1,2321186.01,23,7.0
+A-3539,consumer,2021-01-31,True,Consumer Auto,8.9,7946.89,5,7.0
+A-3540,consumer,2024-05-07,True,Consumer Auto,6.6,29126.14,0,7.0
+A-3541,consumer,2020-09-03,False,,,,0,
+A-3542,consumer,2020-01-03,False,,,,0,
+A-3543,consumer,2023-01-26,False,,,,0,
+A-3544,consumer,2020-12-06,True,Commercial CI,10.0,503279.36,1,5.0
+A-3545,consumer,2025-10-24,False,,,,0,
+A-3546,consumer,2021-09-01,True,Consumer Auto,9.1,35635.6,11,3.0
+A-3547,consumer,2022-11-13,True,Commercial CI,8.4,518052.48,28,4.0
+B-3234,business,2020-11-18,False,,,,0,
+A-3548,consumer,2023-07-27,False,,,,0,
+B-3235,business,2025-06-23,False,,,,0,
+A-3549,consumer,2025-06-28,True,Commercial CI,7.1,457106.83,9,4.0
+B-3236,business,2022-11-10,True,Commercial CI,5.4,557176.47,9,5.0
+A-3550,consumer,2019-12-20,False,,,,0,
+B-3237,business,2021-02-04,True,Commercial CRE,7.5,1846684.87,8,5.0
+A-3551,consumer,2020-06-06,False,,,,0,
+A-3552,consumer,2023-12-03,False,,,,0,
+B-3238,business,2025-04-05,False,,,,0,
+A-3553,consumer,2022-10-30,False,,,,0,
+A-3554,consumer,2023-09-18,True,Commercial CRE,9.0,1631067.3,43,4.0
+A-3555,consumer,2023-06-22,True,Consumer Auto,7.4,29360.51,8,4.0
+B-3239,business,2025-05-31,True,Commercial CRE,9.7,2634224.29,7,8.0
+B-3240,business,2023-04-02,True,Commercial CRE,5.2,815577.81,7,2.0
+B-3241,business,2023-08-03,False,,,,0,
+B-3242,business,2019-07-09,False,,,,0,
+A-3556,consumer,2024-05-23,True,Consumer Auto,7.7,12260.3,5,2.0
+A-3557,consumer,2019-09-18,True,Consumer Auto,8.0,32288.67,6,2.0
+A-3558,consumer,2025-12-03,True,Commercial CRE,5.9,1183860.97,43,4.0
+A-3559,consumer,2023-09-14,True,Commercial CRE,5.9,2241022.29,2,4.0
+A-3560,consumer,2021-07-24,True,Commercial CRE,5.9,1557595.24,0,7.0
+B-3243,business,2022-07-11,True,Consumer Auto,6.9,34307.73,4,3.0
+A-3561,consumer,2019-05-31,False,,,,0,
+B-3244,business,2021-04-16,False,,,,0,
+B-3245,business,2025-04-21,True,Commercial CRE,4.7,2470209.59,3,1.0
+A-3562,consumer,2023-09-27,True,Commercial CRE,6.3,1872655.8,16,7.0
+A-3563,consumer,2024-09-24,False,,,,0,
+A-3564,consumer,2026-01-05,False,,,,0,
+B-3246,business,2021-07-24,False,,,,0,
+A-3565,consumer,2023-05-12,True,Commercial CRE,9.8,2266644.97,10,4.0
+A-3566,consumer,2023-08-25,True,Commercial CI,5.8,120853.12,9,1.0
+A-3567,consumer,2020-09-02,True,Commercial CRE,5.8,2497735.38,6,7.0
+A-3568,consumer,2022-08-03,False,,,,0,
+B-3247,business,2021-08-06,True,Commercial CRE,5.1,2334922.25,7,2.0
+B-3248,business,2022-01-30,False,,,,0,
+B-3249,business,2021-05-29,False,,,,0,
+B-3250,business,2021-11-24,True,Consumer Auto,9.9,36348.74,0,4.0
+A-3569,consumer,2019-05-11,False,,,,0,
+B-3251,business,2022-09-13,False,,,,0,
+A-3570,consumer,2020-05-27,False,,,,0,
+A-3571,consumer,2021-05-13,True,Commercial CI,4.5,74952.04,7,9.0
+A-3572,consumer,2024-08-30,False,,,,0,
+A-3573,consumer,2021-08-25,False,,,,0,
+B-3252,business,2022-01-06,False,,,,0,
+A-3574,consumer,2024-08-11,True,Commercial CI,8.2,47199.03,8,6.0
+B-3253,business,2020-02-03,True,Consumer Auto,6.8,15175.84,43,7.0
+A-3575,consumer,2019-06-28,False,,,,0,
+A-3576,consumer,2023-12-25,False,,,,0,
+A-3577,consumer,2022-09-12,True,Commercial CRE,6.9,2308292.21,4,8.0
+A-3578,consumer,2023-01-05,False,,,,0,
+A-3579,consumer,2020-05-31,False,,,,0,
+B-3254,business,2025-12-22,True,Consumer Auto,9.4,43150.06,51,1.0
+A-3580,consumer,2019-07-25,False,,,,0,
+A-3581,consumer,2025-09-27,False,,,,0,
+B-3255,business,2020-10-12,True,Commercial CI,5.7,498378.52,8,7.0
+A-3582,consumer,2019-12-29,True,Consumer Auto,8.9,36523.19,2,3.0
+B-3256,business,2025-04-06,False,,,,0,
+B-3257,business,2020-10-13,False,,,,0,
+A-3583,consumer,2020-01-23,False,,,,0,
+A-3584,consumer,2020-02-17,False,,,,0,
+A-3585,consumer,2025-11-15,False,,,,0,
+A-3586,consumer,2020-04-30,True,Consumer Auto,4.9,24835.19,22,8.0
+B-3258,business,2024-12-30,False,,,,0,
+A-3587,consumer,2020-11-28,False,,,,0,
+A-3588,consumer,2025-06-30,False,,,,0,
+A-3589,consumer,2020-08-30,False,,,,0,
+A-3590,consumer,2021-04-12,False,,,,0,
+A-3591,consumer,2020-02-23,True,Consumer Auto,9.7,22729.83,5,2.0
+B-3259,business,2024-12-23,False,,,,0,
+A-3592,consumer,2025-06-10,False,,,,0,
+A-3593,consumer,2021-08-18,True,Commercial CRE,4.9,979531.79,19,8.0
+A-3594,consumer,2025-02-19,True,Consumer Auto,10.0,22647.1,0,1.0
+A-3595,consumer,2020-06-07,False,,,,0,
+A-3596,consumer,2021-10-01,False,,,,0,
+B-3260,business,2024-04-28,False,,,,0,
+A-3597,consumer,2022-10-29,False,,,,0,
+A-3598,consumer,2021-09-14,False,,,,0,
+A-3599,consumer,2023-08-28,True,Consumer Auto,9.1,13267.68,4,2.0
+B-3261,business,2023-06-16,False,,,,0,
+A-3600,consumer,2020-05-18,False,,,,0,
+A-3601,consumer,2022-06-07,True,Consumer Auto,6.7,19788.0,8,3.0
+A-3602,consumer,2019-07-29,False,,,,0,
+A-3603,consumer,2025-09-28,True,Commercial CI,9.3,213388.95,7,2.0
+A-3604,consumer,2023-11-04,False,,,,0,
+B-3262,business,2019-04-26,True,Commercial CI,5.0,194719.63,4,2.0
+A-3605,consumer,2022-02-17,False,,,,0,
+A-3606,consumer,2023-08-21,False,,,,0,
+A-3607,consumer,2024-09-04,True,Consumer Auto,6.8,5800.18,17,9.0
+A-3608,consumer,2024-05-24,False,,,,0,
+B-3263,business,2023-06-11,False,,,,0,
+A-3609,consumer,2025-04-01,False,,,,0,
+A-3610,consumer,2025-10-26,True,Commercial CRE,8.3,1134836.56,70,6.0
+A-3611,consumer,2023-03-22,True,Commercial CRE,9.1,596989.01,10,7.0
+A-3612,consumer,2023-08-01,False,,,,0,
+B-3264,business,2020-09-30,False,,,,0,
+A-3613,consumer,2020-08-14,False,,,,0,
+A-3614,consumer,2021-02-28,True,Commercial CRE,6.5,2105792.53,1,3.0
+B-3265,business,2021-01-05,False,,,,0,
+A-3615,consumer,2020-05-18,False,,,,0,
+B-3266,business,2025-10-16,True,Commercial CI,5.8,496710.33,9,9.0
+A-3616,consumer,2024-12-19,True,Commercial CI,5.7,245762.52,11,4.0
+A-3617,consumer,2025-05-02,True,Consumer Auto,6.8,17327.97,68,5.0
+B-3267,business,2019-09-03,True,Commercial CI,5.3,475516.5,3,1.0
+A-3618,consumer,2021-08-23,False,,,,0,
+A-3619,consumer,2025-05-25,True,Commercial CI,8.9,362310.32,1,7.0
+A-3620,consumer,2020-06-11,True,Commercial CI,9.0,461221.6,30,8.0
+A-3621,consumer,2020-10-22,False,,,,0,
+A-3622,consumer,2022-09-13,False,,,,0,
+A-3623,consumer,2019-05-09,False,,,,0,
+A-3624,consumer,2019-07-29,False,,,,0,
+A-3625,consumer,2024-08-17,False,,,,0,
+A-3626,consumer,2023-03-26,False,,,,0,
+B-3268,business,2021-03-01,False,,,,0,
+B-3269,business,2025-08-11,False,,,,0,
+A-3627,consumer,2025-04-27,False,,,,0,
+A-3628,consumer,2022-07-05,False,,,,0,
+A-3629,consumer,2020-11-06,True,Commercial CI,9.3,368205.88,4,7.0
+B-3270,business,2025-01-12,True,Commercial CI,5.1,593160.99,7,5.0
+A-3630,consumer,2025-03-26,True,Consumer Auto,7.4,12127.87,6,1.0
+A-3631,consumer,2020-11-02,True,Commercial CI,9.6,182540.33,9,8.0
+B-3271,business,2023-10-25,False,,,,0,
+B-3272,business,2025-09-24,True,Commercial CRE,6.0,941613.6,20,6.0
+A-3632,consumer,2023-09-07,True,Consumer Auto,6.7,10558.4,60,3.0
+B-3273,business,2023-10-03,True,Commercial CRE,8.7,1937360.52,4,3.0
+A-3633,consumer,2021-11-06,True,Commercial CI,5.8,302351.59,8,4.0
+A-3634,consumer,2021-03-10,True,Commercial CRE,8.6,736168.24,10,8.0
+A-3635,consumer,2019-08-12,False,,,,0,
+A-3636,consumer,2021-03-05,False,,,,0,
+A-3637,consumer,2021-09-11,False,,,,0,
+B-3274,business,2022-05-02,True,Commercial CRE,5.7,2253558.1,5,3.0
+B-3275,business,2021-04-20,False,,,,0,
+A-3638,consumer,2020-05-24,True,Commercial CI,5.1,50734.01,6,5.0
+A-3639,consumer,2025-07-29,True,Consumer Auto,4.8,26178.54,6,7.0
+B-3276,business,2020-03-13,False,,,,0,
+A-3640,consumer,2023-12-18,True,Commercial CRE,6.5,2085009.76,0,5.0
+A-3641,consumer,2023-04-30,True,Commercial CRE,8.1,260973.04,9,4.0
+B-3277,business,2024-01-16,True,Consumer Auto,7.4,6715.4,22,2.0
+A-3642,consumer,2025-11-07,True,Consumer Auto,9.9,38879.89,8,8.0
+A-3643,consumer,2019-07-04,False,,,,0,
+A-3644,consumer,2021-06-04,False,,,,0,
+A-3645,consumer,2023-06-18,True,Consumer Auto,9.0,16746.59,5,4.0
+A-3646,consumer,2020-06-27,False,,,,0,
+A-3647,consumer,2021-01-04,True,Commercial CRE,8.0,2432548.64,2,6.0
+B-3278,business,2022-07-29,True,Commercial CRE,9.1,1486251.34,6,7.0
+A-3648,consumer,2024-07-19,True,Commercial CI,5.9,594642.85,3,5.0
+A-3649,consumer,2025-07-28,True,Commercial CI,5.1,499418.18,5,7.0
+A-3650,consumer,2025-02-01,True,Commercial CRE,9.2,1073274.58,10,7.0
+A-3651,consumer,2022-03-16,True,Commercial CRE,7.8,1942761.54,5,5.0
+A-3652,consumer,2021-10-30,True,Commercial CRE,9.2,1454833.97,1,3.0
+A-3653,consumer,2023-02-12,True,Commercial CI,7.4,126742.49,10,9.0
+B-3279,business,2023-08-06,True,Commercial CRE,9.6,1182748.96,3,8.0
+A-3654,consumer,2019-11-08,True,Commercial CI,6.0,75794.85,12,1.0
+A-3655,consumer,2021-09-08,True,Commercial CI,7.2,562277.5,2,2.0
+B-3280,business,2024-11-03,False,,,,0,
+B-3281,business,2025-12-09,True,Consumer Auto,4.3,6949.65,6,2.0
+A-3656,consumer,2024-04-09,True,Commercial CI,6.5,197904.22,9,2.0
+A-3657,consumer,2026-01-15,False,,,,0,
+A-3658,consumer,2024-06-27,False,,,,0,
+B-3282,business,2025-01-16,False,,,,0,
+A-3659,consumer,2021-09-27,False,,,,0,
+A-3660,consumer,2024-09-21,False,,,,0,
+A-3661,consumer,2023-12-05,False,,,,0,
+B-3283,business,2022-03-08,True,Consumer Auto,8.4,36676.15,8,1.0
+A-3662,consumer,2025-03-15,False,,,,0,
+A-3663,consumer,2025-08-02,True,Commercial CI,4.1,549797.6,8,3.0
+A-3664,consumer,2023-10-06,True,Commercial CRE,6.3,890402.46,13,4.0
+A-3665,consumer,2025-11-29,True,Consumer Auto,4.6,10159.04,4,6.0
+A-3666,consumer,2020-01-12,True,Consumer Auto,5.3,8174.53,2,2.0
+A-3667,consumer,2020-10-26,False,,,,0,
+B-3284,business,2022-03-15,False,,,,0,
+B-3285,business,2021-10-01,True,Consumer Auto,6.9,44412.28,5,4.0
+A-3668,consumer,2024-04-17,False,,,,0,
+A-3669,consumer,2020-10-28,True,Commercial CI,9.2,101781.61,77,3.0
+A-3670,consumer,2024-12-08,False,,,,0,
+A-3671,consumer,2023-01-15,False,,,,0,
+B-3286,business,2022-02-16,True,Consumer Auto,6.5,6424.29,4,4.0
+A-3672,consumer,2022-11-02,True,Commercial CRE,4.2,2300118.96,4,7.0
+B-3287,business,2024-05-02,True,Consumer Auto,7.2,19514.0,3,1.0
+B-3288,business,2022-06-25,False,,,,0,
+A-3673,consumer,2021-11-22,False,,,,0,
+A-3674,consumer,2022-09-19,True,Commercial CI,5.4,159086.66,3,1.0
+A-3675,consumer,2020-09-07,True,Consumer Auto,9.3,22318.95,28,2.0
+A-3676,consumer,2020-02-01,False,,,,0,
+B-3289,business,2023-03-17,True,Consumer Auto,9.5,13959.89,7,4.0
+A-3677,consumer,2022-05-23,False,,,,0,
+B-3290,business,2025-07-10,True,Commercial CRE,4.5,1298673.01,16,9.0
+A-3678,consumer,2023-07-19,False,,,,0,
+B-3291,business,2020-01-19,True,Commercial CRE,8.9,1023416.67,10,5.0
+B-3292,business,2020-07-19,True,Commercial CRE,7.6,578763.21,1,7.0
+B-3293,business,2022-12-19,False,,,,0,
+A-3679,consumer,2021-02-14,True,Consumer Auto,5.8,11129.48,8,5.0
+A-3680,consumer,2025-04-01,False,,,,0,
+A-3681,consumer,2024-08-20,False,,,,0,
+A-3682,consumer,2025-11-03,True,Commercial CRE,8.1,800369.13,10,8.0
+B-3294,business,2025-11-18,False,,,,0,
+A-3683,consumer,2020-01-15,False,,,,0,
+B-3295,business,2023-02-15,True,Consumer Auto,6.7,18710.21,14,3.0
+A-3684,consumer,2022-08-03,False,,,,0,
+A-3685,consumer,2025-01-28,False,,,,0,
+B-3296,business,2020-01-14,False,,,,0,
+B-3297,business,2021-11-27,False,,,,0,
+A-3686,consumer,2022-01-02,False,,,,0,
+B-3298,business,2021-03-12,False,,,,0,
+A-3687,consumer,2023-02-15,False,,,,0,
+A-3688,consumer,2019-06-26,False,,,,0,
+A-3689,consumer,2022-08-29,True,Commercial CI,6.9,217648.44,7,3.0
+A-3690,consumer,2025-04-07,True,Consumer Auto,5.6,14394.37,1,2.0
+A-3691,consumer,2019-10-08,False,,,,0,
+B-3299,business,2022-08-18,False,,,,0,
+B-3300,business,2022-06-02,False,,,,0,
+A-3692,consumer,2025-11-21,False,,,,0,
+A-3693,consumer,2022-11-16,False,,,,0,
