@@ -1,9 +1,20 @@
 from __future__ import annotations
 
+import io
+import os
+import ssl
+import urllib.request
+from urllib.parse import quote
+
 import pandas as pd
 
 
 STOOQ_DAILY_URL = "https://stooq.com/q/d/l/?s={symbol}&i=d"
+
+
+def _encode_stooq_symbol(symbol: str) -> str:
+	# Stooq uses symbols like "^spx" and "spy.us". We URL-encode the caret.
+	return quote(symbol.strip(), safe=".-").lower()
 
 
 def fetch_stooq_daily(symbol: str) -> pd.DataFrame:
@@ -12,8 +23,18 @@ def fetch_stooq_daily(symbol: str) -> pd.DataFrame:
 	Returns columns: date, open, high, low, close, volume (when available).
 	Raises on network/parse errors.
 	"""
-	url = STOOQ_DAILY_URL.format(symbol=symbol)
-	df = pd.read_csv(url)
+	url = STOOQ_DAILY_URL.format(symbol=_encode_stooq_symbol(symbol))
+	try:
+		df = pd.read_csv(url)
+	except Exception:
+		# Some local networks (e.g., SSL interception) can break cert validation.
+		# Allow an explicit opt-in fallback for local dev.
+		if os.getenv("STOOQ_INSECURE_SSL") == "1":
+			ctx = ssl._create_unverified_context()
+			with urllib.request.urlopen(url, context=ctx, timeout=20) as resp:
+				df = pd.read_csv(io.BytesIO(resp.read()))
+		else:
+			raise
 	# Stooq uses capitalized headers
 	df = df.rename(columns={
 		"Date": "date",

@@ -172,12 +172,12 @@ st.caption(f"{section} • Portfolio Desk")
 
 @st.cache_data(show_spinner=False, ttl=3600)
 def _get_market_snapshots():
-	# ETFs to approximate major US indices (no API key)
+	# Major US indices (daily closes). Data source: Stooq.
 	symbols = {
-		"S&P 500": "spy.us",
-		"Nasdaq 100": "qqq.us",
-		"Dow": "dia.us",
-		"Russell 2000": "iwm.us",
+		"S&P 500": "^spx",
+		"Nasdaq Composite": "^ndq",
+		"Dow": "^dji",
+		"Russell 2000": "^rut",
 	}
 	out = {}
 	for label, sym in symbols.items():
@@ -190,7 +190,7 @@ def _get_market_snapshots():
 
 if section == "Markets":
 	st.subheader("Markets")
-	st.caption("US market snapshot (daily closes). Data source: Stooq.")
+	st.caption("US market snapshot (index levels; daily closes). Data source: Stooq.")
 
 	snaps = _get_market_snapshots()
 	cols = st.columns(len(snaps))
