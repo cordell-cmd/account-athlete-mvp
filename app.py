@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import os
+import urllib.parse
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -22,18 +23,31 @@ st.set_page_config(page_title="Relationship Signals Prototype", layout="wide")
 
 def _render_nav(active: str) -> None:
 	items = ["Front Page", "Lending", "Risk", "Wealth", "Markets", "Treasury", "Operations", "Compliance"]
-	spans = []
+	clickable = {"Front Page", "Markets"}
+	parts: list[str] = []
 	for name in items:
 		cls = "active" if name == active else ""
-		spans.append(f'<span class="{cls}">{name}</span>')
+		if name in clickable:
+			href = "?section=" + urllib.parse.quote(name)
+			parts.append(f'<a class="{cls}" href="{href}">{name}</a>')
+		else:
+			parts.append(f'<span class="{cls}">{name}</span>')
 	st.markdown(
 		f"""
 		<div class="cnb-nav">
-			{' '.join(spans)}
+			{' '.join(parts)}
 		</div>
 		""",
 		unsafe_allow_html=True,
 	)
+
+
+def _get_section_from_query(default: str) -> str:
+	val = st.query_params.get("section", default)
+	# Streamlit may return a list for multi-valued params
+	if isinstance(val, list):
+		val = val[0] if val else default
+	return str(val) if val else default
 
 # -----------------------------
 # Newspaper-style masthead
@@ -92,6 +106,14 @@ st.markdown(
 	.cnb-nav span {
 		color: rgba(0,0,0,0.70);
 	}
+	.cnb-nav a {
+		color: rgba(0,0,0,0.70);
+		text-decoration: none;
+	}
+	.cnb-nav a:hover {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
 
 	.cnb-nav .active {
 		color: rgba(0,0,0,0.95);
@@ -128,8 +150,21 @@ st.markdown(
 	unsafe_allow_html=True,
 )
 
-# Top-level section switch (kept simple; nav is visual)
-section = st.sidebar.radio("Section", options=["Front Page", "Markets"], index=0)
+# Top-level section switch (kept simple)
+_section_options = ["Front Page", "Markets"]
+_section_default = _get_section_from_query("Front Page")
+if _section_default not in _section_options:
+	_section_default = "Front Page"
+
+section = st.sidebar.radio(
+	"Section",
+	options=_section_options,
+	index=_section_options.index(_section_default),
+	key="section",
+)
+
+# Keep URL in sync so header clicks and sidebar match.
+st.query_params["section"] = section
 _render_nav(section)
 
 st.caption(f"{section} • Portfolio Desk")
