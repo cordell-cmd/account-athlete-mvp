@@ -29,7 +29,7 @@ def _render_nav(active: str) -> None:
 		cls = "active" if name == active else ""
 		if name in clickable:
 			href = "?section=" + urllib.parse.quote(name)
-			parts.append(f'<a class="{cls}" href="{href}">{name}</a>')
+			parts.append(f'<a class="{cls}" href="{href}" target="_self">{name}</a>')
 		else:
 			parts.append(f'<span class="{cls}">{name}</span>')
 	st.markdown(
