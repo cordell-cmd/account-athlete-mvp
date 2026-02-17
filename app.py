@@ -13,10 +13,27 @@ from engine.metrics import (
 	weighted_avg_interest_rate_overall,
 	weighted_avg_interest_rate_by_product
 )
+from engine.markets import market_snapshot
 from engine.trajectory import add_trajectory
 from engine.explain import player_card_text
 
 st.set_page_config(page_title="Relationship Signals Prototype", layout="wide")
+
+
+def _render_nav(active: str) -> None:
+	items = ["Front Page", "Lending", "Risk", "Wealth", "Markets", "Treasury", "Operations", "Compliance"]
+	spans = []
+	for name in items:
+		cls = "active" if name == active else ""
+		spans.append(f'<span class="{cls}">{name}</span>')
+	st.markdown(
+		f"""
+		<div class="cnb-nav">
+			{' '.join(spans)}
+		</div>
+		""",
+		unsafe_allow_html=True,
+	)
 
 # -----------------------------
 # Newspaper-style masthead
@@ -107,21 +124,79 @@ st.markdown(
 		<div class="cnb-kicker">Demo</div>
 		<div class="cnb-title">The CNB Times</div>
 	</div>
-	<div class="cnb-nav">
-		<span class="active">Front Page</span>
-		<span>Lending</span>
-		<span>Risk</span>
-		<span>Wealth</span>
-		<span>Markets</span>
-		<span>Treasury</span>
-		<span>Operations</span>
-		<span>Compliance</span>
-	</div>
 	""",
 	unsafe_allow_html=True,
 )
 
-st.caption("Front Page • Portfolio Desk")
+# Top-level section switch (kept simple; nav is visual)
+section = st.sidebar.radio("Section", options=["Front Page", "Markets"], index=0)
+_render_nav(section)
+
+st.caption(f"{section} • Portfolio Desk")
+
+
+@st.cache_data(show_spinner=False, ttl=3600)
+def _get_market_snapshots():
+	# ETFs to approximate major US indices (no API key)
+	symbols = {
+		"S&P 500": "spy.us",
+		"Nasdaq 100": "qqq.us",
+		"Dow": "dia.us",
+		"Russell 2000": "iwm.us",
+	}
+	out = {}
+	for label, sym in symbols.items():
+		try:
+			out[label] = market_snapshot(sym)
+		except Exception as e:
+			out[label] = {"symbol": sym, "ok": False, "error": str(e)}
+	return out
+
+
+if section == "Markets":
+	st.subheader("Markets")
+	st.caption("US market snapshot (daily closes). Data source: Stooq.")
+
+	snaps = _get_market_snapshots()
+	cols = st.columns(len(snaps))
+	for (label, snap), col in zip(snaps.items(), cols):
+		with col:
+			if not snap.get("ok"):
+				st.metric(label, "—")
+				st.caption(snap.get("error", "Unavailable"))
+				continue
+			close = snap.get("close")
+			pct = snap.get("pct")
+			as_of = snap.get("as_of")
+			delta = "—" if pct is None else f"{pct:+.2f}%"
+			st.metric(label, "—" if close is None else f"{close:,.2f}", delta)
+			if as_of:
+				st.caption(f"As of {as_of}")
+
+	# Simple normalized line chart (last 90 trading days)
+	series = []
+	for label, snap in snaps.items():
+		if snap.get("ok") and isinstance(snap.get("series"), pd.DataFrame):
+			df = snap["series"].dropna().tail(90).copy()
+			if not df.empty:
+				base = float(df["close"].iloc[0]) if float(df["close"].iloc[0]) != 0 else 1.0
+				df[label] = (df["close"].astype(float) / base) * 100.0
+				series.append(df[["date", label]].set_index("date"))
+
+	if series:
+		chart_df = pd.concat(series, axis=1)
+		fig, ax = plt.subplots(figsize=(9, 3.2))
+		chart_df.plot(ax=ax, linewidth=2)
+		ax.set_title("Last ~90 trading days (indexed to 100)")
+		ax.set_xlabel("")
+		ax.set_ylabel("Index")
+		ax.grid(True, alpha=0.25)
+		ax.legend(loc="upper left", fontsize=9)
+		st.pyplot(fig, clear_figure=True)
+	else:
+		st.info("No market series available right now.")
+
+	st.stop()
 
 
 def _to_bytes(f) -> bytes:
