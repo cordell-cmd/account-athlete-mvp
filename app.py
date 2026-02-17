@@ -14,7 +14,7 @@ from engine.metrics import (
 	weighted_avg_interest_rate_overall,
 	weighted_avg_interest_rate_by_product
 )
-from engine.markets import market_snapshot
+from engine.markets import market_snapshot, us_market_movers
 from engine.trajectory import add_trajectory
 from engine.explain import player_card_text
 
@@ -188,6 +188,11 @@ def _get_market_snapshots():
 	return out
 
 
+@st.cache_data(show_spinner=False, ttl=600)
+def _get_market_movers():
+	return us_market_movers(limit=8)
+
+
 if section == "Markets":
 	st.subheader("Markets")
 	st.caption("US market snapshot (index levels; daily closes). Data source: Stooq.")
@@ -208,28 +213,28 @@ if section == "Markets":
 			if as_of:
 				st.caption(f"As of {as_of}")
 
-	# Simple normalized line chart (last 90 trading days)
-	series = []
-	for label, snap in snaps.items():
-		if snap.get("ok") and isinstance(snap.get("series"), pd.DataFrame):
-			df = snap["series"].dropna().tail(90).copy()
-			if not df.empty:
-				base = float(df["close"].iloc[0]) if float(df["close"].iloc[0]) != 0 else 1.0
-				df[label] = (df["close"].astype(float) / base) * 100.0
-				series.append(df[["date", label]].set_index("date"))
+	st.divider()
+	cols2 = st.columns(3)
+	movers = _get_market_movers()
 
-	if series:
-		chart_df = pd.concat(series, axis=1)
-		fig, ax = plt.subplots(figsize=(9, 3.2))
-		chart_df.plot(ax=ax, linewidth=2)
-		ax.set_title("Last ~90 trading days (indexed to 100)")
-		ax.set_xlabel("")
-		ax.set_ylabel("Index")
-		ax.grid(True, alpha=0.25)
-		ax.legend(loc="upper left", fontsize=9)
-		st.pyplot(fig, clear_figure=True)
-	else:
-		st.info("No market series available right now.")
+	def _render_mover_list(col, title: str, key: str):
+		with col:
+			st.markdown(f"**{title}**")
+			items = movers.get(key) if isinstance(movers, dict) else None
+			if not items:
+				st.caption("Unavailable")
+				return
+			for it in items[:8]:
+				sym = it.get("symbol", "—")
+				price = it.get("price")
+				pct = it.get("pct")
+				price_str = "—" if price is None else f"{float(price):,.2f}"
+				pct_str = "" if pct is None else f" {float(pct):+,.2f}%"
+				st.write(f"{sym}  {price_str}{pct_str}")
+
+	_render_mover_list(cols2[0], "Most Active", "most_active")
+	_render_mover_list(cols2[1], "Top Gainers", "gainers")
+	_render_mover_list(cols2[2], "Top Losers", "losers")
 
 	st.stop()
 
