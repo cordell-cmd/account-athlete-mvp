@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from engine.io import load_accounts, load_transactions, load_balances, derive_balances_from_transactions
 from engine.metrics import (
 	compute_portfolio_metrics,
+	add_derived_risk_rating,
 	weighted_avg_interest_rate_overall,
 	weighted_avg_interest_rate_by_product
 )
@@ -138,6 +139,7 @@ def _compute_portfolio_from_csv_bytes(accounts_bytes: bytes, txns_bytes: bytes, 
 		balances_df = derive_balances_from_transactions(txns_df)
 	portfolio_df = compute_portfolio_metrics(accounts_df, txns_df, balances_df)
 	portfolio_df = add_trajectory(portfolio_df)
+	portfolio_df = add_derived_risk_rating(portfolio_df)
 	return portfolio_df, balances_df
 
 # Sidebar controls
@@ -225,6 +227,7 @@ _numeric_cols = [
 	"loan_balance",
 	"interest_rate",
 	"risk_rating",
+	"risk_rating_derived",
 	"days_past_due",
 	"latest_balance",
 	"baseline_balance_30d",
@@ -237,6 +240,12 @@ _numeric_cols = [
 for _c in _numeric_cols:
 	if _c in portfolio.columns:
 		portfolio[_c] = pd.to_numeric(portfolio[_c], errors="coerce")
+
+# Prefer derived (rule-based) rating for UI and thresholds; fall back to input risk_rating.
+if "risk_rating_derived" in portfolio.columns:
+	portfolio["risk_rating_used"] = portfolio["risk_rating_derived"].where(~portfolio["risk_rating_derived"].isna(), portfolio.get("risk_rating"))
+else:
+	portfolio["risk_rating_used"] = portfolio.get("risk_rating")
 
 only_loans = st.sidebar.checkbox("Loans only", value=False)
 
@@ -303,8 +312,8 @@ if "product" in portfolio.columns and prod_selected:
 	if set(prod_selected) != set(prod_options):
 		mask &= portfolio["product"].astype(str).isin(prod_selected)
 
-if "risk_rating" in portfolio.columns:
-	mask &= _between_or_na(portfolio["risk_rating"], risk_sel[0], risk_sel[1])
+if "risk_rating_used" in portfolio.columns:
+	mask &= _between_or_na(portfolio["risk_rating_used"], risk_sel[0], risk_sel[1])
 
 if "days_past_due" in portfolio.columns:
 	mask &= _between_or_na(portfolio["days_past_due"], dpd_sel[0], dpd_sel[1])
@@ -576,19 +585,19 @@ if "has_loan" in portfolio.columns:
 	drill = portfolio[has_loan_mask].copy()
 else:
 	drill = portfolio.copy()
-if "risk_rating" in drill.columns:
-	drill["risk_rating"] = pd.to_numeric(drill["risk_rating"], errors="coerce")
+if "risk_rating_used" in drill.columns:
+	drill["risk_rating_used"] = pd.to_numeric(drill["risk_rating_used"], errors="coerce")
 if "days_past_due" in drill.columns:
 	drill["days_past_due"] = pd.to_numeric(drill["days_past_due"], errors="coerce")
 
-has_risk = "risk_rating" in drill.columns
+has_risk = "risk_rating_used" in drill.columns
 has_dpd = "days_past_due" in drill.columns
 
 if not (has_risk and has_dpd):
-	st.info("Risk fields not present. Ensure accounts.csv includes risk_rating and days_past_due.")
+	st.info("Risk fields not present. Ensure accounts.csv includes days_past_due, or use deposit metrics only.")
 else:
 	# Flag accounts meeting either condition
-	drill["risk_flag"] = drill["risk_rating"].fillna(0) >= risk_cut
+	drill["risk_flag"] = drill["risk_rating_used"].fillna(0) >= risk_cut
 	drill["dpd_flag"] = drill["days_past_due"].fillna(0) >= dpd_cut
 
 	hot = drill[(drill["risk_flag"]) | (drill["dpd_flag"])].copy()
@@ -603,7 +612,7 @@ else:
 	loan_bal_sum = float(pd.to_numeric(drill.get("loan_balance"), errors="coerce").fillna(0).sum()) if "loan_balance" in drill.columns else 0.0
 	loan_wair = weighted_avg_interest_rate_overall(drill)
 	severe_dpd = int((drill["days_past_due"].fillna(0) >= 60).sum())
-	very_high_risk = int((drill["risk_rating"].fillna(0) >= 8).sum())
+	very_high_risk = int((pd.to_numeric(drill.get("risk_rating_used"), errors="coerce").fillna(0) >= 8).sum())
 
 	top_prod_txt = "—"
 	if "product" in drill.columns and "loan_balance" in drill.columns:
@@ -670,7 +679,7 @@ else:
 			"account_id",
 			"customer_type",
 			"product",
-			"risk_rating",
+			"risk_rating_used",
 			"days_past_due",
 			"interest_rate",
 			"loan_balance",
@@ -740,9 +749,12 @@ with left:
 	st.write(
 		f"**Product:** {row.get('product', '—')}  \n"
 		f"**Interest rate:** {('—' if row.get('interest_rate') is None else str(row.get('interest_rate')) + '%')}  \n"
-		f"**Risk rating:** {row.get('risk_rating', '—')}  \n"
+		f"**Risk rating (derived):** {row.get('risk_rating_used', '—')}  \n"
 		f"**Days past due:** {row.get('days_past_due', '—')}"
 	)
+	reasons_risk = row.get("risk_rating_reasons", "")
+	if reasons_risk:
+		st.caption(f"Risk drivers: {reasons_risk}")
 
 	st.subheader("Trajectory")
 	st.metric("Trajectory", row.get("trajectory", "—"))

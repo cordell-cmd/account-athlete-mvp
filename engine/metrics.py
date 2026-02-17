@@ -248,3 +248,166 @@ def weighted_avg_interest_rate_by_product(portfolio: pd.DataFrame) -> pd.DataFra
 
     out = pd.DataFrame(rows).sort_values("total_balance", ascending=False)
     return out
+
+
+# -------------------------
+# DERIVED RISK RATING (RULES)
+# -------------------------
+
+
+def derive_risk_rating(metrics_row: dict) -> tuple[int | None, list[str]]:
+    """Derive an explainable 1–9 risk rating from existing metrics.
+
+    This is meant for prototypes and demos where a risk band is helpful even when
+    no risk_rating is supplied in the input accounts.csv.
+
+    Higher number = higher risk.
+    """
+    reasons: list[str] = []
+    points = 0
+
+    buf = metrics_row.get("cash_buffer_days")
+    dd = metrics_row.get("drawdown_count_90d")
+    rec = metrics_row.get("avg_recovery_days_90d")
+    od = metrics_row.get("overdraft_nsf_90d")
+    base = metrics_row.get("baseline_balance_30d")
+    vol = metrics_row.get("balance_volatility_30d")
+    lb = metrics_row.get("latest_balance")
+    dpd = metrics_row.get("days_past_due")
+
+    # Delinquency is the strongest loan signal when present.
+    if dpd is not None:
+        try:
+            dpd_v = float(dpd)
+            if dpd_v >= 60:
+                points += 4
+                reasons.append("60+ days past due.")
+            elif dpd_v >= 30:
+                points += 3
+                reasons.append("30+ days past due.")
+            elif dpd_v >= 10:
+                points += 1
+                reasons.append("10+ days past due.")
+            elif dpd_v > 0:
+                points += 1
+                reasons.append("Past due (>0 days).")
+        except Exception:
+            pass
+
+    # Cash buffer
+    if buf is not None:
+        try:
+            buf_v = float(buf)
+            if buf_v < 3:
+                points += 3
+                reasons.append("Low cash buffer (<3 days).")
+            elif buf_v < 7:
+                points += 2
+                reasons.append("Moderate cash buffer (<7 days).")
+            elif buf_v < 10:
+                points += 1
+                reasons.append("Thin cash buffer (<10 days).")
+            elif buf_v >= 14:
+                points -= 1
+                reasons.append("Strong cash buffer (≥14 days).")
+        except Exception:
+            pass
+
+    # Drawdowns
+    if dd is not None:
+        try:
+            dd_v = float(dd)
+            if dd_v >= 2:
+                points += 2
+                reasons.append("Multiple drawdowns (90d).")
+            elif dd_v == 1:
+                points += 1
+                reasons.append("Drawdown detected (90d).")
+        except Exception:
+            pass
+
+    # Recovery
+    if rec is not None:
+        try:
+            rec_v = float(rec)
+            if rec_v > 30:
+                points += 2
+                reasons.append("Slow recovery after drawdowns (>30 days).")
+            elif rec_v > 14:
+                points += 1
+                reasons.append("Moderate recovery time (>14 days).")
+        except Exception:
+            pass
+
+    # Overdraft/NSF
+    if od is not None:
+        try:
+            od_v = float(od)
+            if od_v >= 2:
+                points += 2
+                reasons.append("Multiple overdraft/NSF-like events (90d).")
+            elif od_v == 1:
+                points += 1
+                reasons.append("Overdraft/NSF-like event (90d).")
+        except Exception:
+            pass
+
+    # Volatility relative to baseline
+    if vol is not None and base is not None:
+        try:
+            rel = abs(float(vol)) / (abs(float(base)) + 1e-6)
+            if rel > 0.75:
+                points += 2
+                reasons.append("Very high volatility vs baseline.")
+            elif rel > 0.40:
+                points += 1
+                reasons.append("High volatility vs baseline.")
+        except Exception:
+            pass
+
+    # Latest balance vs baseline
+    if lb is not None and base is not None:
+        try:
+            base_v = float(base)
+            lb_v = float(lb)
+            if base_v != 0:
+                drop = (base_v - lb_v) / abs(base_v)
+                if drop > 0.35:
+                    points += 2
+                    reasons.append("Latest balance far below baseline.")
+                elif drop > 0.20:
+                    points += 1
+                    reasons.append("Latest balance below baseline.")
+                elif drop < -0.10:
+                    points -= 1
+                    reasons.append("Latest balance above baseline.")
+        except Exception:
+            pass
+
+    # If we have essentially no usable inputs, return None.
+    if not reasons:
+        return None, []
+
+    # Map points into 1..9.
+    rating = int(max(1, min(9, 5 + points)))
+    return rating, reasons[:4]
+
+
+def add_derived_risk_rating(portfolio: pd.DataFrame) -> pd.DataFrame:
+    """Add `risk_rating_derived` and `risk_rating_reasons` columns."""
+    if portfolio.empty:
+        out = portfolio.copy()
+        out["risk_rating_derived"] = []
+        out["risk_rating_reasons"] = []
+        return out
+
+    ratings: list[int | None] = []
+    reasons: list[str] = []
+    for _, row in portfolio.iterrows():
+        r, why = derive_risk_rating(row.to_dict())
+        ratings.append(r)
+        reasons.append("; ".join(why) if why else "")
+    out = portfolio.copy()
+    out["risk_rating_derived"] = ratings
+    out["risk_rating_reasons"] = reasons
+    return out
