@@ -203,6 +203,16 @@ def _numeric_range(series: pd.Series, fallback_min: float, fallback_max: float) 
 	return float(s.min()), float(s.max())
 
 
+def _between_or_na(series: pd.Series, lo: float, hi: float) -> pd.Series:
+	"""Range filter that does not exclude missing values.
+
+	This prevents 'full range' sliders from accidentally dropping accounts whose
+	metric is unavailable (NaN).
+	"""
+	s = pd.to_numeric(series, errors="coerce")
+	return s.isna() | s.between(lo, hi)
+
+
 # -----------------------------
 # Sidebar: Segment filters (scales to 1,000+ accounts)
 # -----------------------------
@@ -284,37 +294,41 @@ if only_loans and "has_loan" in portfolio.columns:
 	mask &= _truthy_mask(portfolio["has_loan"])
 
 if "trajectory" in portfolio.columns and traj_selected:
-	mask &= portfolio["trajectory"].isin(traj_selected)
+	# If all trajectory options are selected, treat as no filter.
+	if set(traj_selected) != set(traj_options):
+		mask &= portfolio["trajectory"].isin(traj_selected)
 
 if "product" in portfolio.columns and prod_selected:
-	mask &= portfolio["product"].astype(str).isin(prod_selected)
+	# If all product options are selected, treat as no filter.
+	if set(prod_selected) != set(prod_options):
+		mask &= portfolio["product"].astype(str).isin(prod_selected)
 
 if "risk_rating" in portfolio.columns:
-	mask &= portfolio["risk_rating"].fillna(0).between(risk_sel[0], risk_sel[1])
+	mask &= _between_or_na(portfolio["risk_rating"], risk_sel[0], risk_sel[1])
 
 if "days_past_due" in portfolio.columns:
-	mask &= portfolio["days_past_due"].fillna(0).between(dpd_sel[0], dpd_sel[1])
+	mask &= _between_or_na(portfolio["days_past_due"], dpd_sel[0], dpd_sel[1])
 
 if "interest_rate" in portfolio.columns:
-	mask &= portfolio["interest_rate"].fillna(0).between(rate_sel[0], rate_sel[1])
+	mask &= _between_or_na(portfolio["interest_rate"], rate_sel[0], rate_sel[1])
 
 if loan_bal_sel is not None and "loan_balance" in portfolio.columns:
-	mask &= portfolio["loan_balance"].fillna(0).between(loan_bal_sel[0], loan_bal_sel[1])
+	mask &= _between_or_na(portfolio["loan_balance"], loan_bal_sel[0], loan_bal_sel[1])
 
 if "latest_balance" in portfolio.columns:
-	mask &= portfolio["latest_balance"].fillna(0).between(bal_sel[0], bal_sel[1])
+	mask &= _between_or_na(portfolio["latest_balance"], bal_sel[0], bal_sel[1])
 if "baseline_balance_30d" in portfolio.columns:
-	mask &= portfolio["baseline_balance_30d"].fillna(0).between(baseline_sel[0], baseline_sel[1])
+	mask &= _between_or_na(portfolio["baseline_balance_30d"], baseline_sel[0], baseline_sel[1])
 if "balance_volatility_30d" in portfolio.columns:
-	mask &= portfolio["balance_volatility_30d"].fillna(0).between(vol_sel[0], vol_sel[1])
+	mask &= _between_or_na(portfolio["balance_volatility_30d"], vol_sel[0], vol_sel[1])
 if "cash_buffer_days" in portfolio.columns:
-	mask &= portfolio["cash_buffer_days"].fillna(0).between(buf_sel[0], buf_sel[1])
+	mask &= _between_or_na(portfolio["cash_buffer_days"], buf_sel[0], buf_sel[1])
 if "drawdown_count_90d" in portfolio.columns:
-	mask &= portfolio["drawdown_count_90d"].fillna(0).between(dd_sel[0], dd_sel[1])
+	mask &= _between_or_na(portfolio["drawdown_count_90d"], dd_sel[0], dd_sel[1])
 if "avg_recovery_days_90d" in portfolio.columns:
-	mask &= portfolio["avg_recovery_days_90d"].fillna(0).between(rec_sel[0], rec_sel[1])
+	mask &= _between_or_na(portfolio["avg_recovery_days_90d"], rec_sel[0], rec_sel[1])
 if "overdraft_nsf_90d" in portfolio.columns:
-	mask &= portfolio["overdraft_nsf_90d"].fillna(0).between(od_sel[0], od_sel[1])
+	mask &= _between_or_na(portfolio["overdraft_nsf_90d"], od_sel[0], od_sel[1])
 
 portfolio = portfolio[mask].copy()
 
