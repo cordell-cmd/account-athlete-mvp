@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import io
-import html as html_lib
 import os
-import re
 import ssl
 import urllib.request
 from urllib.parse import quote
@@ -33,72 +31,6 @@ def _fetch_url_bytes(url: str) -> bytes:
 		raise
 
 
-def _strip_tags(s: str) -> str:
-	s = re.sub(r"<[^>]+>", "", s)
-	s = html_lib.unescape(s)
-	s = s.replace("\xa0", " ")
-	return " ".join(s.split()).strip()
-
-
-def _parse_market_stat_rows(html_fragment: str, limit: int) -> list[dict]:
-	rows: list[dict] = []
-	for row_html in re.findall(r"<tr>(.*?)</tr>", html_fragment, flags=re.I | re.S):
-		if "href=q/?s=" not in row_html.lower():
-			continue
-		tds = re.findall(r"<td[^>]*>(.*?)</td>", row_html, flags=re.I | re.S)
-		if len(tds) < 5:
-			continue
-		# Column layout: [symbol], [name], [market], [price], [change%], ...
-		sym_match = re.search(r">\s*([A-Za-z0-9._^:-]+)\s*</a>", tds[0], flags=re.I)
-		symbol = (sym_match.group(1).strip().upper() if sym_match else _strip_tags(tds[0]).upper())
-		price_text = _strip_tags(tds[3])
-		pct_text = _strip_tags(tds[4])
-		m_price = re.search(r"([+-]?\d+(?:\.\d+)?)", price_text)
-		m_pct = re.search(r"([+-]?\d+(?:\.\d+)?)\s*%", pct_text)
-		price = float(m_price.group(1)) if m_price else None
-		pct = float(m_pct.group(1)) if m_pct else None
-		rows.append({"symbol": symbol, "price": price, "pct": pct})
-		if len(rows) >= limit:
-			break
-	return rows
-
-
-def _extract_between(html: str, start_pat: str, end_pat: str | None = None) -> str:
-	start = re.search(start_pat, html, flags=re.I)
-	if not start:
-		return ""
-	sub = html[start.end():]
-	if end_pat:
-		end = re.search(end_pat, sub, flags=re.I)
-		if end:
-			sub = sub[: end.start()]
-	return sub
-
-
-def us_market_movers(limit: int = 8) -> dict:
-	"""Return US market lists (Most Active / Top Gainers / Top Losers) from Stooq.
-
-	Each list item: {symbol, price, pct}
-	"""
-	# Gainers/losers are on the default Market Stat: U.S. page.
-	base_url = "https://stooq.com/t/s/?m=us"
-	base_html = _fetch_url_bytes(base_url).decode("utf-8", errors="ignore")
-
-	adv_fragment = _extract_between(base_html, r"<b>\s*Advancers\s*</b>", r"<b>\s*Decliners\s*</b>")
-	dec_fragment = _extract_between(base_html, r"<b>\s*Decliners\s*</b>", r"</table>")
-
-	# Most active (by turnover) is on t=1.
-	active_url = "https://stooq.com/t/s/?m=us&t=1"
-	active_html = _fetch_url_bytes(active_url).decode("utf-8", errors="ignore")
-	active_fragment = _extract_between(active_html, r"<b>\s*Most\s+Active\s*-\s*Turnover\s*</b>", r"<b>\s*Most\s+Active\s*-\s*No\.\s*Trades\s*</b>")
-
-	return {
-		"most_active": _parse_market_stat_rows(active_fragment, limit=limit),
-		"gainers": _parse_market_stat_rows(adv_fragment, limit=limit),
-		"losers": _parse_market_stat_rows(dec_fragment, limit=limit),
-	}
-
-
 def fetch_stooq_daily(symbol: str) -> pd.DataFrame:
 	"""Fetch daily OHLCV data from Stooq.
 
@@ -111,6 +43,12 @@ def fetch_stooq_daily(symbol: str) -> pd.DataFrame:
 	except Exception:
 		data = _fetch_url_bytes(url)
 		df = pd.read_csv(io.BytesIO(data))
+
+	# If Stooq returns an error page/HTML, pandas may still return a "df".
+	# Fail closed instead of showing bogus index levels.
+	expected = {"Date", "Open", "High", "Low", "Close"}
+	if not expected.issubset(set(df.columns)):
+		raise ValueError(f"Unexpected Stooq response for {symbol} (columns={list(df.columns)[:8]}).")
 	# Stooq uses capitalized headers
 	df = df.rename(columns={
 		"Date": "date",

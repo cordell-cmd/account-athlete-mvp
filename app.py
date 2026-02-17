@@ -14,7 +14,7 @@ from engine.metrics import (
 	weighted_avg_interest_rate_overall,
 	weighted_avg_interest_rate_by_product
 )
-from engine.markets import market_snapshot, us_market_movers
+from engine.markets import market_snapshot
 from engine.trajectory import add_trajectory
 from engine.explain import player_card_text
 
@@ -188,14 +188,9 @@ def _get_market_snapshots():
 	return out
 
 
-@st.cache_data(show_spinner=False, ttl=600)
-def _get_market_movers():
-	return us_market_movers(limit=8)
-
-
 if section == "Markets":
 	st.subheader("Markets")
-	st.caption("US market snapshot (index levels; daily closes). Data source: Stooq.")
+	st.caption("US market snapshot (index levels; daily closes). Data source: Stooq. Values may differ from NYT's real-time quotes.")
 
 	snaps = _get_market_snapshots()
 	cols = st.columns(len(snaps))
@@ -212,29 +207,6 @@ if section == "Markets":
 			st.metric(label, "—" if close is None else f"{close:,.2f}", delta)
 			if as_of:
 				st.caption(f"As of {as_of}")
-
-	st.divider()
-	cols2 = st.columns(3)
-	movers = _get_market_movers()
-
-	def _render_mover_list(col, title: str, key: str):
-		with col:
-			st.markdown(f"**{title}**")
-			items = movers.get(key) if isinstance(movers, dict) else None
-			if not items:
-				st.caption("Unavailable")
-				return
-			for it in items[:8]:
-				sym = it.get("symbol", "—")
-				price = it.get("price")
-				pct = it.get("pct")
-				price_str = "—" if price is None else f"{float(price):,.2f}"
-				pct_str = "" if pct is None else f" {float(pct):+,.2f}%"
-				st.write(f"{sym}  {price_str}{pct_str}")
-
-	_render_mover_list(cols2[0], "Most Active", "most_active")
-	_render_mover_list(cols2[1], "Top Gainers", "gainers")
-	_render_mover_list(cols2[2], "Top Losers", "losers")
 
 	st.stop()
 
