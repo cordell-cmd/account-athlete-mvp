@@ -11,8 +11,10 @@ np.random.seed(7)
 # ----------------------------
 # CONFIG
 # ----------------------------
-N_TOTAL_ACCOUNTS = 1000
-DAYS = 200  # number of simulated days for balances + transactions
+# Keep the bundled sample data demo-friendly and fast to load on Streamlit Cloud.
+# You can increase these locally if you want a heavier dataset.
+N_TOTAL_ACCOUNTS = 250
+DAYS = 140  # number of simulated days for balances + transactions
 
 LOAN_PRODUCTS = ["Consumer Auto", "Commercial CI", "Commercial CRE"]
 
